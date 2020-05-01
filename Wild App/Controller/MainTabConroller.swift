@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainTabConroller.swift
 //  Wild App
 //
 //  Created by Герман Иванилов on 01.05.2020.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MainTabConroller : UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
