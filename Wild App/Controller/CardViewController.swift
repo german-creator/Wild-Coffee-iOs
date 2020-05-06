@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol UpdateTabBar {
     func updateSecondItemBadge(count: String)
@@ -17,11 +18,13 @@ class CardViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var volumeCount: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonAdd: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var imageForProduct: UIImageView!
     
     var delegate: UpdateTabBar?
     
@@ -43,14 +46,14 @@ class CardViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         minusButton.layer.cornerRadius = 5
         plusButton.layer.cornerRadius = 5
         buttonAdd.layer.cornerRadius = 18
         buttonAdd.layer.borderWidth = 3
         buttonAdd.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
         
-        tableView.rowHeight = 60
+        tableView.rowHeight = 50
         
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardReusableCell")
         
@@ -65,19 +68,28 @@ class CardViewController: UIViewController, UITextFieldDelegate {
         } else {
             cost = product!.cost
             
-            for i in 0...product!.add.count - 1 {
-                selectedAdd[i] = 0
+            if product!.add.count != 0 {
+                for i in 0...product!.add.count - 1 {
+                    selectedAdd[i] = 0
+                }
             }
+            
             buttonAdd.setTitle("\(product!.cost) ₽", for: .normal)
             
+            
+            Nuke.loadImage(with: URL(string: product!.imageUrl)!, into: imageForProduct)
+
             titleLabel.text = product?.name
             subTitleLabel.text = product?.description
+            volumeCount.text = String(product!.volume) + " мл"
         }
         
         tableView.dataSource = self
         tableView.delegate = self
         pickerView.dataSource = self
         pickerView.delegate = self
+        
+
         
     }
     
@@ -94,6 +106,9 @@ class CardViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        Nuke.loadImage(with: URL(string: productInBasket!.imageUrl)!, into: imageForProduct)
+
+        volumeCount.text = String(productInBasket!.volume) + " мл"
         countLabel.text = String(count)
         buttonAdd.setTitle("\(cost) ₽", for: .normal)
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardReusableCell")

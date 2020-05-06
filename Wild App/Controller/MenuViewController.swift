@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import Nuke
 
 class MenuViewController: UIViewController, UpdateTabBar {
     
@@ -17,10 +18,14 @@ class MenuViewController: UIViewController, UpdateTabBar {
     
     
     var group = Group(name: "1", avalible: true)
-    var product = Product()
+    //    var product = Product()
+    
+    var storage: Storage?
+    var groupStorageRef: StorageReference?
     
     var avalibleGroupList: [Group] = []
     var avalibleProductList: [Product] = []
+    var productInGroup: [Product] = []
     
     var numberSelected = 0
     
@@ -28,24 +33,18 @@ class MenuViewController: UIViewController, UpdateTabBar {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
-//        self.present(vc, animated: true, completion: nil)
         
+        //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        //        self.present(vc, animated: true, completion: nil)
         
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 230
+        storage = Storage.storage()
         
-        
-        avalibleGroupList = Service.sharedInstance.allGroupList.filter{$0.avalible == true}
-        avalibleProductList = Service.sharedInstance.allProductList.filter{$0.avalible == true && $0.group == avalibleGroupList[numberSelected].name}
-        
+        self.tableView.rowHeight = 220
         
         
         tableView.dataSource = self
@@ -57,8 +56,28 @@ class MenuViewController: UIViewController, UpdateTabBar {
         collectionView.register(UINib(nibName: "TableMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TableMenuCollectionViewCell")
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductReusableCell")
         
+        //        avalibleProductList = Service.sharedInstance.createClassicProduct()
+        
+        //        WorkWithDatabase.addProductToDatabase()
+        
+        WorkWithDatabase.getAllAvalibleGroup { group in
+            self.avalibleGroupList.append(contentsOf: group)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        
+        WorkWithDatabase.getAllAvalibleProduct { (products) in
+            self.avalibleProductList.append(contentsOf: products)
+            self.productInGroup = self.avalibleProductList.filter{$0.group == self.avalibleGroupList[self.numberSelected].name}
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
     }
+    
+    
     
     func updateSecondItemBadge(count: String) {
         tabBarController?.tabBar.items?[1].badgeValue = count
@@ -71,7 +90,7 @@ class MenuViewController: UIViewController, UpdateTabBar {
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        avalibleProductList.count
+        productInGroup.count
     }
     
     
@@ -79,9 +98,11 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductReusableCell", for: indexPath) as! ProductCell
         
-        cell.label!.text = avalibleProductList[indexPath.row].name
-        cell.subLabel!.text = avalibleProductList[indexPath.row].description
-        
+        cell.label!.text = productInGroup[indexPath.row].name
+        cell.subLabel!.text = productInGroup[indexPath.row].description
+            
+        Nuke.loadImage(with: URL(string: productInGroup[indexPath.row].imageUrl)!, into: cell.imageForProduct)
+
         return cell
     }
     
@@ -102,7 +123,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
             
             destinationVC.delegate = self
             if let indexPath = tableView.indexPathForSelectedRow {
-                destinationVC.product = self.avalibleProductList[indexPath.row]
+                destinationVC.product = self.productInGroup[indexPath.row]
             }
         }
         
@@ -139,10 +160,9 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
         numberSelected = indexPath.row
         
-        avalibleProductList = Service.sharedInstance.allProductList.filter{$0.avalible == true && $0.group == avalibleGroupList[numberSelected].name}
+        self.productInGroup = avalibleProductList.filter{$0.group == self.avalibleGroupList[numberSelected].name}
         
         self.collectionView.reloadDataWithoutScroll()
         

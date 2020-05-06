@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		873A6C286E28ABB59A7C7D8C /* libPods-Wild App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE8F87E48ABB0A532AE6D80 /* libPods-Wild App.a */; };
+		BA1D2B05245C2D5B00B3EC06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA1D2B04245C2D5B00B3EC06 /* GoogleService-Info.plist */; };
+		BA60D402245EDB6500016A39 /* WorkWithDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60D401245EDB6500016A39 /* WorkWithDatabase.swift */; };
 		BA7A4A82245BFDA300B464F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A4A81245BFDA300B464F3 /* AppDelegate.swift */; };
 		BA7A4A84245BFDA300B464F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A4A83245BFDA300B464F3 /* SceneDelegate.swift */; };
 		BA7A4A89245BFDA300B464F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A4A87245BFDA300B464F3 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		6AA298FB6E8E4CDEFF0136EC /* Pods-Wild App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wild App.debug.xcconfig"; path = "Target Support Files/Pods-Wild App/Pods-Wild App.debug.xcconfig"; sourceTree = "<group>"; };
 		6BE8F87E48ABB0A532AE6D80 /* libPods-Wild App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wild App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1D2B04245C2D5B00B3EC06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA60D401245EDB6500016A39 /* WorkWithDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithDatabase.swift; sourceTree = "<group>"; };
 		BA7A4A7E245BFDA300B464F3 /* Wild App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wild App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7A4A81245BFDA300B464F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA7A4A83245BFDA300B464F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				BA7A4A8A245BFDA500B464F3 /* Assets.xcassets */,
 				BA7A4A99245BFE0700B464F3 /* Fonts */,
 				BA7A4A8C245BFDA500B464F3 /* LaunchScreen.storyboard */,
+				BA1D2B04245C2D5B00B3EC06 /* GoogleService-Info.plist */,
 				BA7A4A8F245BFDA500B464F3 /* Info.plist */,
 			);
 			path = "Wild App";
@@ -176,6 +181,7 @@
 				BA7A4ABB245C009F00B464F3 /* Order.swift */,
 				BA7A4ABD245C00B300B464F3 /* Product.swift */,
 				BA7A4ABF245C00C800B464F3 /* ProductInBasket.swift */,
+				BA60D401245EDB6500016A39 /* WorkWithDatabase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,7 +225,6 @@
 				BA7A4AD3245C024100B464F3 /* TableMenuCollectionViewCell.swift */,
 				BA7A4AD5245C025800B464F3 /* ProductCell.swift */,
 				BA7A4AD7245C027100B464F3 /* OrderCell.swift */,
-				BAF7FF8D245C1F27008BE09A /* CardCell.xib */,
 			);
 			path = CellController;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF7FF87245C09C2008BE09A /* ProductCell.xib */,
+				BAF7FF8D245C1F27008BE09A /* CardCell.xib */,
 				BAF7FF89245C0A6C008BE09A /* TableMenuCollectionViewCell.xib */,
 				BAF7FF8B245C1BAB008BE09A /* OrderCell.xib */,
 			);
@@ -319,6 +325,7 @@
 				BA7A4AA8245BFE4700B464F3 /* SF-Mono-LightItalic.otf in Resources */,
 				BAF7FF8E245C1F27008BE09A /* CardCell.xib in Resources */,
 				BA7A4A89245BFDA300B464F3 /* Main.storyboard in Resources */,
+				BA1D2B05245C2D5B00B3EC06 /* GoogleService-Info.plist in Resources */,
 				BA7A4AA9245BFE4700B464F3 /* SF-Mono-Heavy.otf in Resources */,
 				BA7A4AAB245BFE4700B464F3 /* SF-Mono-HeavyItalic.otf in Resources */,
 			);
@@ -373,6 +380,7 @@
 				BA7A4AC3245C010300B464F3 /* Service.swift in Sources */,
 				BA7A4ABA245C008B00B464F3 /* Group.swift in Sources */,
 				BA7A4AD6245C025800B464F3 /* ProductCell.swift in Sources */,
+				BA60D402245EDB6500016A39 /* WorkWithDatabase.swift in Sources */,
 				BA7A4A84245BFDA300B464F3 /* SceneDelegate.swift in Sources */,
 				BA7A4ABE245C00B300B464F3 /* Product.swift in Sources */,
 			);
@@ -522,6 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJBP4498QG;
 				INFOPLIST_FILE = "Wild App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivanilovgerman.Wild-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,6 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJBP4498QG;
 				INFOPLIST_FILE = "Wild App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivanilovgerman.Wild-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

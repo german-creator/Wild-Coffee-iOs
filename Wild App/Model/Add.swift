@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Add {
     let name: String
@@ -18,4 +19,13 @@ struct Add {
         self.option = option
         self.costOption = costOption
     }
+    
+//    init(snapshot: DataSnapshot) {
+//        
+//        let snapshotValue = snapshot.value as! [String: Any]
+//        
+//        self.name = snapshotValue["name"] as! String
+//        self.option = snapshotValue["option"] as! [String]
+//        self.costOption = snapshotValue["costOprtion"] as! [Int]
+//    }
 }

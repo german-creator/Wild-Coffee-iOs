@@ -21,20 +21,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flat" translatesAutoresizingMaskIntoConstraints="NO" id="Vn4-Zv-x3t">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vn4-Zv-x3t">
                         <rect key="frame" x="0.0" y="8" width="500" height="234"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФЛЭТ УАЙТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc5-hY-1Tq">
-                        <rect key="frame" x="191.5" y="23" width="117" height="25.5"/>
-                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="21"/>
+                        <rect key="frame" x="197" y="23" width="106" height="23"/>
+                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsN-17-lYt">
-                        <rect key="frame" x="111" y="56" width="278.5" height="36"/>
+                        <rect key="frame" x="40" y="56" width="420" height="31.5"/>
                         <string key="text">Эспрессо, небольшое количество
 молока и ничего лишнего</string>
-                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="13"/>
                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -43,8 +43,10 @@
                     <constraint firstAttribute="bottom" secondItem="Vn4-Zv-x3t" secondAttribute="bottom" constant="8" id="0Ov-bl-Y3X"/>
                     <constraint firstItem="Vn4-Zv-x3t" firstAttribute="leading" secondItem="A4y-ns-VR1" secondAttribute="leading" id="519-7i-EFB"/>
                     <constraint firstItem="Vn4-Zv-x3t" firstAttribute="top" secondItem="A4y-ns-VR1" secondAttribute="top" constant="8" id="7o2-WV-g5N"/>
+                    <constraint firstItem="nsN-17-lYt" firstAttribute="leading" secondItem="A4y-ns-VR1" secondAttribute="leadingMargin" constant="20" id="MeH-rE-MeL"/>
                     <constraint firstItem="Cc5-hY-1Tq" firstAttribute="centerX" secondItem="A4y-ns-VR1" secondAttribute="centerX" id="cX2-JT-SpK"/>
                     <constraint firstItem="nsN-17-lYt" firstAttribute="centerX" secondItem="A4y-ns-VR1" secondAttribute="centerX" id="feX-oI-UaQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nsN-17-lYt" secondAttribute="trailing" constant="20" id="gP2-K5-zOH"/>
                     <constraint firstItem="Cc5-hY-1Tq" firstAttribute="top" secondItem="A4y-ns-VR1" secondAttribute="top" constant="23" id="mZD-0T-G1I"/>
                     <constraint firstItem="nsN-17-lYt" firstAttribute="top" secondItem="A4y-ns-VR1" secondAttribute="topMargin" constant="45" id="zgz-Ak-rzw"/>
                     <constraint firstAttribute="trailing" secondItem="Vn4-Zv-x3t" secondAttribute="trailing" id="zyx-Bd-PYq"/>
@@ -52,13 +54,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="raA-aS-4i9"/>
             <connections>
+                <outlet property="imageForProduct" destination="Vn4-Zv-x3t" id="uzm-ZS-JTJ"/>
                 <outlet property="label" destination="Cc5-hY-1Tq" id="gsL-U2-Wvz"/>
                 <outlet property="subLabel" destination="nsN-17-lYt" id="Sxn-7G-vaj"/>
             </connections>
             <point key="canvasLocation" x="108.69565217391305" y="171.42857142857142"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="flat" width="137.5" height="91.5"/>
-    </resources>
 </document>

@@ -17,6 +17,7 @@ class OrderCell: SwipeTableViewCell {
     @IBOutlet weak var subLabel2: UILabel!
     @IBOutlet weak var subLabel3: UILabel!
     @IBOutlet weak var subLabel4: UILabel!
+    @IBOutlet weak var imageForProduct: UIImageView!
     
     
     @IBOutlet weak var costLabel: UILabel!
@@ -34,3 +35,5 @@ class OrderCell: SwipeTableViewCell {
     }
     
 }
+
+

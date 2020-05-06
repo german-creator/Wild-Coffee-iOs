@@ -8,6 +8,7 @@
 
 import UIKit
 import SwipeCellKit
+import Nuke
 
 class OrderViewController: UIViewController, UpdateTabBar {
     
@@ -30,8 +31,7 @@ class OrderViewController: UIViewController, UpdateTabBar {
         orderButton.layer.borderWidth = 3
         orderButton.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
         
-        
-        self.tableView.rowHeight = 120
+        self.tableView.rowHeight = 100
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -153,7 +153,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate, Swipe
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderReusableCell", for: indexPath) as! OrderCell
         
         cell.delegate = self
-
+        
         var labelList: [UILabel] = []
         
         labelList.append(cell.subLabel1)
@@ -199,6 +199,9 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate, Swipe
         
         cell.costLabel.text = "\((basketList[indexPath.row].cost + addCost)*count) ₽"
         
+        
+        Nuke.loadImage(with: URL(string: basketList[indexPath.row].imageUrl)!, into: cell.imageForProduct)
+
         
         return cell
     }

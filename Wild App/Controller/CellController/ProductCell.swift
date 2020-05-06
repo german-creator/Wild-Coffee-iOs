@@ -13,6 +13,7 @@ class ProductCell: UITableViewCell {
 //    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet weak var imageForProduct: UIImageView!
     
     
 

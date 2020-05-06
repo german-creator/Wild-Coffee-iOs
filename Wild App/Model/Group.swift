@@ -6,6 +6,9 @@
 //  Copyright © 2020 Герман Иванилов. All rights reserved.
 //
 
+import Foundation
+import Firebase
+
 struct Group {
     let name: String
     var avalible: Bool
@@ -13,6 +16,12 @@ struct Group {
     init(name: String, avalible: Bool) {
         self.name = name
         self.avalible = avalible
+    }
+    
+    init(snapshot: DataSnapshot) {
+         let snapshotValue = snapshot.value as! [String: Any]
+         self.name = snapshotValue["name"] as! String
+         self.avalible = snapshotValue["avalible"] as! Bool
     }
     
     func getTestGroupList() -> [Group] {
@@ -23,5 +32,19 @@ struct Group {
         }
         return groupList
         
+    }
+}
+
+
+extension String {
+    var bool: Bool? {
+        switch self.lowercased() {
+        case "true", "t", "yes", "y", "1":
+            return true
+        case "false", "f", "no", "n", "0":
+            return false
+        default:
+            return nil
+        }
     }
 }
