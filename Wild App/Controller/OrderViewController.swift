@@ -27,11 +27,12 @@ class OrderViewController: UIViewController, UpdateTabBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        orderButton.layer.cornerRadius = 18
-        orderButton.layer.borderWidth = 3
+        orderButton.layer.cornerRadius = 15
+        orderButton.layer.borderWidth = 2
         orderButton.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
         
-        self.tableView.rowHeight = 100
+        self.tableView.rowHeight = 110
+        
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -42,13 +43,14 @@ class OrderViewController: UIViewController, UpdateTabBar {
         inputDateTextField.inputView = pickerView
         
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         basketList = Service.sharedInstance.baskedtList ?? []
         updateTopLabels()
         tableView.reloadData()
+        
         
     }
     
@@ -84,8 +86,12 @@ class OrderViewController: UIViewController, UpdateTabBar {
     
     func updateSecondItemBadge(count: String) {
         
-        tabBarController?.tabBar.items?[1].badgeValue = count
-        
+        if count == "0"{
+            tabBarController?.tabBar.items?[1].badgeValue = nil
+        } else {
+            tabBarController?.tabBar.items?[1].badgeValue = count
+            
+        }
         viewDidAppear(true)
         
     }
@@ -96,18 +102,74 @@ class OrderViewController: UIViewController, UpdateTabBar {
     
     @IBAction func doneTextField(_ sender: UITextField)  {
         commentTextField.resignFirstResponder()
+        
     }
     
- 
+    
     @IBAction func clickOrderButton(_ sender: UIButton) {
+        
+        if !FirebaseAuthentication.checkUserLogin(){
+            showErrod(error: "Для заказа напитков необходимо зарегестрироваться")
+            
+        } else{
+            if basketList.count == 0 {
+                
+                showErrod(error: "Добавьте напитки в заказ")
+                
+            } else {
+                if inputDateTextField.text == "" {
+                    
+                    showErrod(error: "Выберите время")
+                    
+                    
+                } else {
+                    let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "popUpId") as! PopUpViewController
+                    
+                    self.parent!.addChild(popOverVC)
+                    popOverVC.view.frame =  self.parent!.view.frame
+                    self.parent!.view.addSubview(popOverVC.view)
+                    popOverVC.didMove(toParent:  self.parent!)
+                    
+                }
+            }
+        }
+        
+    }
+    
+    func sentOrder()  {
+        let order = Order(products: basketList, comment: commentTextField.text ?? "", timeTo: inputDateTextField.text ?? "")
+        WorkWithDatabase.puchOrderToDatabase(order: order)
         Service.sharedInstance.baskedtList = []
         tabBarController?.tabBar.items?[1].badgeValue = nil
-
+        
         viewDidAppear(true)
         inputDateTextField.text = ""
         commentTextField.text = ""
-
+        
     }
+    
+    func showErrod(error: String) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        
+        let titleFont = [NSAttributedString.Key.font: UIFont(name: "SFMono-Regular", size: 17.0)!]
+        let titleAttrString = NSMutableAttributedString(string: error, attributes: titleFont)
+        
+        alert.setValue(titleAttrString, forKey: "attributedMessage")
+        alert.view.tintColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+        
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func startHighlight(_ sender: UIButton) {
+        orderButton.layer.borderColor = #colorLiteral(red: 0.3817316294, green: 0.9095525146, blue: 0.8818981051, alpha: 0.2044360017)
+    }
+
+    @IBAction func stopHighlight(_ sender: UIButton) {
+        orderButton.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+    }
+    
 }
 
 
@@ -119,7 +181,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate, Swipe
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
         guard orientation == .right else { return nil }
-
+        
         let deleteAction = SwipeAction(style: .destructive, title: "Удалить") { action, indexPath in
             
             self.basketList.remove(at: indexPath.row)
@@ -131,16 +193,16 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate, Swipe
             }
             
             self.updateSecondItemBadge(count: String(count))
-
+            
         }
         
         deleteAction.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.3411764706, blue: 0.3411764706, alpha: 1)
-        deleteAction.font = UIFont(descriptor: UIFontDescriptor(name: "SF Mono", size: 16), size: 16)
+        deleteAction.font = UIFont(descriptor: UIFontDescriptor(name: "SF Mono", size: 15), size: 15)
         deleteAction.image = UIImage(named: "bin")
-
+        
         return [deleteAction]
     }
-
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -156,12 +218,19 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate, Swipe
         
         var labelList: [UILabel] = []
         
+        cell.subLabel1.text = ""
+        cell.subLabel2.text = ""
+        cell.subLabel3.text = ""
+        cell.subLabel4.text = ""
+        
         labelList.append(cell.subLabel1)
         labelList.append(cell.subLabel2)
         labelList.append(cell.subLabel3)
         labelList.append(cell.subLabel4)
         
         let count = basketList[indexPath.row].count
+        
+        cell.countLabel.text = ""
         
         if count != 1 {
             cell.countLabel.text = "\(count) шт"
@@ -201,7 +270,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate, Swipe
         
         
         Nuke.loadImage(with: URL(string: basketList[indexPath.row].imageUrl)!, into: cell.imageForProduct)
-
+        
         
         return cell
     }

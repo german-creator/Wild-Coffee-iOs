@@ -11,10 +11,13 @@ import UIKit
 class TableMenuCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backView.layer.cornerRadius = 17
+        
     }
 
 }

@@ -28,7 +28,6 @@ class CardViewController: UIViewController, UITextFieldDelegate {
     
     var delegate: UpdateTabBar?
     
-    
     var product: Product?
     
     var productInBasket: ProductInBasket?
@@ -49,8 +48,8 @@ class CardViewController: UIViewController, UITextFieldDelegate {
     
         minusButton.layer.cornerRadius = 5
         plusButton.layer.cornerRadius = 5
-        buttonAdd.layer.cornerRadius = 18
-        buttonAdd.layer.borderWidth = 3
+        buttonAdd.layer.cornerRadius = 15
+        buttonAdd.layer.borderWidth = 2
         buttonAdd.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
         
         tableView.rowHeight = 50

@@ -24,6 +24,8 @@ class CardCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        #colorLiteral(red: 0.8795888424, green: 0.8946695924, blue: 0.8985424042, alpha: 1)
+        
         textField.addTarget(self, action: #selector(buttonClick), for: .touchDown)
     }
     

@@ -14,63 +14,12 @@ struct Service {
     
     static var sharedInstance = Service()
     
-    //    var allGroupList: [Group] = []
-    //    var allProductList: [Product] = []
     var baskedtList: [ProductInBasket]?
     
     var ref: DatabaseReference = Database.database().reference()
-    //    var testDataBase: [Group]?
+  
     
-    //    var test: String?
-    
-    //    init() {
-    //        var add = [Add]()
-    //
-    //        let option = ["Cow", "Coconut", "Soy"]
-    //        let costOption = [0, 80, 80]
-    //        add.append(Add(name: "Milk", option: option, costOption: costOption))
-    //
-    //        let option1 = ["Sugar free", "One spoon", "Two spoon"]
-    //
-    //        add.append(Add(name: "Sugar", option: option1, costOption: []))
-    //
-    //
-    //        for i in 0...6 {
-    //            let group = Group(name: "Group \(i)", avalible: true)
-    //            self.allGroupList.append(group)
-    //            for j in 0...5 {
-    //                let product = Product(group: group.name, name: "Product \(i) \(j)", description: "description", cost: 140, volume: 200, add: add, avalible: true)
-    //                self.allProductList.append(product)
-    //            }
-    //        }
-    //
-    
-    //        ref = Database.database().reference()
-    
-    //        self.allGroupList = allGroupListFromDatabase
-    
-    
-    //        let group: String
-    //        var name: String
-    //        let description: String
-    //        let cost: Int
-    //        let volume: Int
-    //        let add: [Add]
-    //        let avalible: Bool
-    //        let imageUrl: String
-    
-    
-    //        let parameters = [ "group": "Классика", "name": "Американо", "description": "Один эспрессо и вода", "cost": "90", "volume": "150", "add": "", "avalible": "true", "imageUrl": ""]
-    //
-    //        ref?.child("Products").childByAutoId().setValue(parameters)
-    
-    
-    //                ref?.child("Groups").childByAutoId().setValue(parameters1)
-    //                ref?.child("Groups").childByAutoId().setValue(parameters2)
-    //                ref?.child("Groups").childByAutoId().setValue(parameters3)
-    //                ref?.child("Groups").childByAutoId().setValue(parameters4)
-    //                ref?.child("Groups").childByAutoId().setValue(parameters5)
-    
+
     func createClassicProduct() {
         
         let milkOption = ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"]

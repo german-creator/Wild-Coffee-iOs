@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>294569573932-94kd8126i5t8fmd70kmnec75kpv27kac.apps.googleusercontent.com</string>
+	<string>294569573932-jg00u5coipdhanlnapitvun0cbj7mj8v.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.294569573932-94kd8126i5t8fmd70kmnec75kpv27kac</string>
+	<string>com.googleusercontent.apps.294569573932-jg00u5coipdhanlnapitvun0cbj7mj8v</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>294569573932-pmpihqshifi9o0r73oqkvj66sfseq7bu.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDDb96bQ4YQ_q8nbskBR5WEvnYuvI7UEfA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ivanilovgerman.Wild-App</string>
+	<string>com.german-creator.Wild-App</string>
 	<key>PROJECT_ID</key>
 	<string>wild-coffee-order</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:294569573932:ios:0413d43f4dfe10800edb89</string>
+	<string>1:294569573932:ios:7e510faccbb84e070edb89</string>
 	<key>DATABASE_URL</key>
 	<string>https://wild-coffee-order.firebaseio.com</string>
 </dict>

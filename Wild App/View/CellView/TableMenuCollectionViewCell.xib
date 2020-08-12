@@ -21,9 +21,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-F8-x69">
+                        <rect key="frame" x="0.0" y="6" width="200" height="38"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSv-ER-rBn">
-                        <rect key="frame" x="0.0" y="5" width="180" height="21"/>
-                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                        <rect key="frame" x="20" y="16" width="160" height="18"/>
+                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="15"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,11 +35,16 @@
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="JSv-ER-rBn" secondAttribute="trailing" constant="20" id="48V-ft-ZWK"/>
-                <constraint firstItem="JSv-ER-rBn" firstAttribute="top" secondItem="fDV-H1-Q7x" secondAttribute="top" constant="5" id="85y-Vb-10r"/>
-                <constraint firstItem="JSv-ER-rBn" firstAttribute="leading" secondItem="fDV-H1-Q7x" secondAttribute="leading" id="QXW-v6-Bic"/>
+                <constraint firstAttribute="trailing" secondItem="FVC-F8-x69" secondAttribute="trailing" id="Fat-Sv-7Hj"/>
+                <constraint firstAttribute="bottom" secondItem="FVC-F8-x69" secondAttribute="bottom" constant="6" id="JQa-tH-Th3"/>
+                <constraint firstItem="JSv-ER-rBn" firstAttribute="centerY" secondItem="fDV-H1-Q7x" secondAttribute="centerY" id="cEk-Rp-3SA"/>
+                <constraint firstItem="FVC-F8-x69" firstAttribute="top" secondItem="fDV-H1-Q7x" secondAttribute="top" constant="6" id="mqJ-gF-ffJ"/>
+                <constraint firstItem="JSv-ER-rBn" firstAttribute="centerX" secondItem="fDV-H1-Q7x" secondAttribute="centerX" id="qr4-pV-3nV"/>
+                <constraint firstItem="FVC-F8-x69" firstAttribute="leading" secondItem="fDV-H1-Q7x" secondAttribute="leading" id="rR7-v5-Zau"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="7kz-V6-cPC"/>
             <connections>
+                <outlet property="backView" destination="FVC-F8-x69" id="TgG-DD-oI9"/>
                 <outlet property="groupName" destination="JSv-ER-rBn" id="vkw-Zd-hpJ"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="140.625"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uoH-aO-njV">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uoH-aO-njV">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,21 @@
         <array key="SF-Mono-Regular.otf">
             <string>SFMono-Regular</string>
         </array>
+        <array key="SF-Mono-Semibold.otf">
+            <string>SFMono-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Order View Controller-->
         <scene sceneID="FRs-i2-BaD">
             <objects>
-                <viewController id="twS-a3-tkG" customClass="OrderViewController" customModule="Wild_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="twS-a3-tkG" customClass="OrderViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhD-fJ-XcM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ya1-Vb-OC1" userLabel="Button View">
-                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="627" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mz4-ij-eQd">
                                         <rect key="frame" x="20" y="0.0" width="384" height="50"/>
@@ -32,14 +35,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmM-lo-op4">
                                                 <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Через..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-NB-V4e">
-                                                        <rect key="frame" x="10" y="13.5" width="99" height="23"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Через..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-NB-V4e">
+                                                        <rect key="frame" x="10" y="14" width="126" height="22"/>
                                                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOn-SM-5XT">
-                                                        <rect key="frame" x="133" y="14" width="24" height="22"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOn-SM-5XT">
+                                                        <rect key="frame" x="148" y="14" width="24" height="22"/>
                                                         <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" image="chevron.down" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
@@ -67,12 +70,17 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="wi1-Nj-4uY"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
                                                         <state key="normal" title="Заказать">
                                                             <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="clickOrderButton:" destination="twS-a3-tkG" eventType="touchUpInside" id="bx0-TL-jdZ"/>
+                                                            <action selector="startHighlight:" destination="twS-a3-tkG" eventType="touchDown" id="01N-5a-IbX"/>
+                                                            <action selector="startHighlight:" destination="twS-a3-tkG" eventType="touchDragInside" id="XP8-DK-BtJ"/>
+                                                            <action selector="stopHighlight:" destination="twS-a3-tkG" eventType="touchUpOutside" id="BFZ-Pd-Ntu"/>
+                                                            <action selector="stopHighlight:" destination="twS-a3-tkG" eventType="touchDragOutside" id="Un7-gf-CKx"/>
+                                                            <action selector="stopHighlight:" destination="twS-a3-tkG" eventType="touchUpInside" id="fE6-1y-RCM"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -97,33 +105,33 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-U2-jNe">
-                                <rect key="frame" x="20" y="64" width="374" height="27.5"/>
+                                <rect key="frame" x="20" y="25" width="374" height="23"/>
                                 <string key="text">В заказе 2 напитка
 </string>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJU-QV-02Z" userLabel="ViewSeparator">
-                                <rect key="frame" x="20" y="139" width="374" height="1"/>
+                                <rect key="frame" x="20" y="86" width="374" height="1"/>
                                 <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ode-Sm-ukg"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EFH-vi-zrl">
-                                <rect key="frame" x="0.0" y="140" width="414" height="533"/>
+                                <rect key="frame" x="0.0" y="87" width="414" height="460"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amh-5b-SbF" userLabel="CommentView">
-                                <rect key="frame" x="0.0" y="673" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="547" width="414" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Комментарий" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBB-FE-Je9">
                                         <rect key="frame" x="30" y="20" width="354" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
                                             <action selector="doneTextField:" destination="twS-a3-tkG" eventType="primaryActionTriggered" id="ct9-Pi-kaw"/>
@@ -151,8 +159,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="на 50 Р" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwf-zV-bo9">
-                                <rect key="frame" x="20" y="91.5" width="374" height="27.5"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="23"/>
+                                <rect key="frame" x="20" y="48" width="374" height="23"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -169,9 +177,9 @@
                             <constraint firstItem="aPe-U2-jNe" firstAttribute="leading" secondItem="k8V-VL-ZSw" secondAttribute="leading" constant="20" id="ZnC-3P-5O9"/>
                             <constraint firstItem="amh-5b-SbF" firstAttribute="top" secondItem="EFH-vi-zrl" secondAttribute="bottom" id="c3e-2W-ufp"/>
                             <constraint firstItem="ya1-Vb-OC1" firstAttribute="trailing" secondItem="k8V-VL-ZSw" secondAttribute="trailing" id="dU7-9p-Hgz"/>
-                            <constraint firstItem="eJU-QV-02Z" firstAttribute="top" secondItem="Uwf-zV-bo9" secondAttribute="bottom" constant="20" id="hDA-F1-GrG"/>
+                            <constraint firstItem="eJU-QV-02Z" firstAttribute="top" secondItem="Uwf-zV-bo9" secondAttribute="bottom" constant="15" id="hDA-F1-GrG"/>
                             <constraint firstItem="Uwf-zV-bo9" firstAttribute="top" secondItem="aPe-U2-jNe" secondAttribute="bottom" id="kGE-td-msQ"/>
-                            <constraint firstItem="aPe-U2-jNe" firstAttribute="top" secondItem="k8V-VL-ZSw" secondAttribute="top" constant="20" id="kPe-cp-FgS"/>
+                            <constraint firstItem="aPe-U2-jNe" firstAttribute="top" secondItem="k8V-VL-ZSw" secondAttribute="top" constant="25" id="kPe-cp-FgS"/>
                             <constraint firstItem="ya1-Vb-OC1" firstAttribute="leading" secondItem="k8V-VL-ZSw" secondAttribute="leading" id="lh2-U5-Lhw"/>
                             <constraint firstItem="Uwf-zV-bo9" firstAttribute="leading" secondItem="k8V-VL-ZSw" secondAttribute="leading" constant="20" id="ltK-ho-Nxw"/>
                             <constraint firstItem="k8V-VL-ZSw" firstAttribute="trailing" secondItem="aPe-U2-jNe" secondAttribute="trailing" constant="20" id="m7j-Ng-5EE"/>
@@ -201,54 +209,54 @@
         <!--Card View Controller-->
         <scene sceneID="UQ3-U2-Fgy">
             <objects>
-                <viewController id="0pr-JI-YRQ" customClass="CardViewController" customModule="Wild_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0pr-JI-YRQ" customClass="CardViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfS-V1-U1v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="69a-fs-hkm">
-                                <rect key="frame" x="10" y="310.5" width="394" height="417.5"/>
+                                <rect key="frame" x="0.0" y="327.33333333333326" width="414" height="308.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-23-TOJ">
-                                <rect key="frame" x="234" y="738" width="140" height="45"/>
+                                <rect key="frame" x="249" y="651" width="125" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="dKS-Kg-lrg"/>
+                                    <constraint firstAttribute="width" constant="125" id="dKS-Kg-lrg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="27"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="22"/>
                                 <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="150 ₽"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="0pr-JI-YRQ" eventType="touchUpInside" id="wtX-dF-cMP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLl-kM-yBF">
-                                <rect key="frame" x="20" y="251.5" width="374" height="19.5"/>
-                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLl-kM-yBF">
+                                <rect key="frame" x="20" y="273.33333333333331" width="374" height="18"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPM-vG-cHg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="K0k-Fn-Rgg"/>
+                                    <constraint firstAttribute="height" constant="230" id="K0k-Fn-Rgg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBQ-3e-Vnm">
-                                <rect key="frame" x="173" y="215" width="68" height="26.5"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="22"/>
+                                <rect key="frame" x="180.66666666666666" y="245" width="52.666666666666657" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-E8-lwW">
-                                <rect key="frame" x="40" y="743" width="120" height="35"/>
+                                <rect key="frame" x="35" y="653" width="125" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mx-Vp-1Jl">
-                                        <rect key="frame" x="0.0" y="0.0" width="33.5" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="36"/>
                                         <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
                                         <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="-"/>
                                         <connections>
@@ -256,15 +264,15 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MU-ds-hix">
-                                        <rect key="frame" x="43.5" y="0.0" width="33" height="35"/>
-                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="22"/>
+                                        <rect key="frame" x="45" y="0.0" width="35" height="36"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9x-Jq-OiV">
-                                        <rect key="frame" x="86.5" y="0.0" width="33.5" height="35"/>
+                                        <rect key="frame" x="90" y="0.0" width="35" height="36"/>
                                         <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
                                         <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="+"/>
                                         <connections>
@@ -273,35 +281,35 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Cwl-ZZ-1Sp"/>
+                                    <constraint firstAttribute="width" constant="125" id="Cwl-ZZ-1Sp"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owb-cQ-d5m">
-                                <rect key="frame" x="202" y="281" width="10" height="19.5"/>
-                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="16"/>
+                                <rect key="frame" x="202.33333333333334" y="299.33333333333331" width="9.3333333333333428" height="18"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="69a-fs-hkm" firstAttribute="leading" secondItem="ZD5-Ap-OIG" secondAttribute="leading" constant="10" id="09O-C8-mQN"/>
+                            <constraint firstItem="69a-fs-hkm" firstAttribute="leading" secondItem="ZD5-Ap-OIG" secondAttribute="leading" id="09O-C8-mQN"/>
                             <constraint firstItem="mPM-vG-cHg" firstAttribute="top" secondItem="ZD5-Ap-OIG" secondAttribute="top" id="2Q2-dJ-PNn"/>
                             <constraint firstItem="uLl-kM-yBF" firstAttribute="leading" secondItem="ZD5-Ap-OIG" secondAttribute="leading" constant="20" id="85C-lW-OLB"/>
                             <constraint firstItem="BBQ-3e-Vnm" firstAttribute="top" secondItem="mPM-vG-cHg" secondAttribute="bottom" constant="15" id="A46-gg-FAl"/>
                             <constraint firstItem="mPM-vG-cHg" firstAttribute="leading" secondItem="ZD5-Ap-OIG" secondAttribute="leading" id="HVc-hq-uTf"/>
-                            <constraint firstItem="uLl-kM-yBF" firstAttribute="top" secondItem="BBQ-3e-Vnm" secondAttribute="bottom" constant="10" id="QXJ-vS-6Af"/>
-                            <constraint firstItem="cvP-E8-lwW" firstAttribute="top" secondItem="69a-fs-hkm" secondAttribute="bottom" constant="15" id="Uh5-vb-19w"/>
+                            <constraint firstItem="uLl-kM-yBF" firstAttribute="top" secondItem="BBQ-3e-Vnm" secondAttribute="bottom" constant="8" id="QXJ-vS-6Af"/>
+                            <constraint firstItem="cvP-E8-lwW" firstAttribute="top" secondItem="69a-fs-hkm" secondAttribute="bottom" constant="17" id="Uh5-vb-19w"/>
                             <constraint firstItem="69a-fs-hkm" firstAttribute="top" secondItem="Owb-cQ-d5m" secondAttribute="bottom" constant="10" id="VEa-j8-EAz"/>
                             <constraint firstItem="ZD5-Ap-OIG" firstAttribute="trailing" secondItem="uLl-kM-yBF" secondAttribute="trailing" constant="20" id="Vfa-6I-uyO"/>
                             <constraint firstItem="Owb-cQ-d5m" firstAttribute="centerX" secondItem="hfS-V1-U1v" secondAttribute="centerX" id="Y0e-6P-I2E"/>
-                            <constraint firstItem="ZD5-Ap-OIG" firstAttribute="trailing" secondItem="69a-fs-hkm" secondAttribute="trailing" constant="10" id="YSR-Bd-ORG"/>
-                            <constraint firstItem="Owb-cQ-d5m" firstAttribute="top" secondItem="uLl-kM-yBF" secondAttribute="bottom" constant="10" id="Zea-Y8-vff"/>
-                            <constraint firstItem="QsS-23-TOJ" firstAttribute="top" secondItem="69a-fs-hkm" secondAttribute="bottom" constant="10" id="eCC-dp-IT0"/>
+                            <constraint firstItem="ZD5-Ap-OIG" firstAttribute="trailing" secondItem="69a-fs-hkm" secondAttribute="trailing" id="YSR-Bd-ORG"/>
+                            <constraint firstItem="Owb-cQ-d5m" firstAttribute="top" secondItem="uLl-kM-yBF" secondAttribute="bottom" constant="8" id="Zea-Y8-vff"/>
+                            <constraint firstItem="QsS-23-TOJ" firstAttribute="top" secondItem="69a-fs-hkm" secondAttribute="bottom" constant="15" id="eCC-dp-IT0"/>
                             <constraint firstItem="ZD5-Ap-OIG" firstAttribute="bottom" secondItem="69a-fs-hkm" secondAttribute="bottom" constant="80" id="f3h-fD-cP8"/>
-                            <constraint firstItem="cvP-E8-lwW" firstAttribute="leading" secondItem="ZD5-Ap-OIG" secondAttribute="leading" constant="40" id="gZx-xf-QIl"/>
+                            <constraint firstItem="cvP-E8-lwW" firstAttribute="leading" secondItem="ZD5-Ap-OIG" secondAttribute="leading" constant="35" id="gZx-xf-QIl"/>
                             <constraint firstItem="ZD5-Ap-OIG" firstAttribute="trailing" secondItem="QsS-23-TOJ" secondAttribute="trailing" constant="40" id="ocW-my-ezw"/>
-                            <constraint firstItem="ZD5-Ap-OIG" firstAttribute="bottom" secondItem="cvP-E8-lwW" secondAttribute="bottom" constant="30" id="q5a-hT-40M"/>
+                            <constraint firstItem="ZD5-Ap-OIG" firstAttribute="bottom" secondItem="cvP-E8-lwW" secondAttribute="bottom" constant="27" id="q5a-hT-40M"/>
                             <constraint firstItem="ZD5-Ap-OIG" firstAttribute="bottom" secondItem="QsS-23-TOJ" secondAttribute="bottom" constant="25" id="sHD-zF-Dze"/>
                             <constraint firstItem="BBQ-3e-Vnm" firstAttribute="centerX" secondItem="hfS-V1-U1v" secondAttribute="centerX" id="tDQ-T4-96e"/>
                             <constraint firstItem="uLl-kM-yBF" firstAttribute="centerX" secondItem="hfS-V1-U1v" secondAttribute="centerX" id="wwW-UB-QAb"/>
@@ -326,28 +334,206 @@
             </objects>
             <point key="canvasLocation" x="1053.6231884057972" y="170.75892857142856"/>
         </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="8vq-lo-Urn">
+            <objects>
+                <viewController storyboardIdentifier="popUpId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XIj-ik-vQH" customClass="PopUpViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tO1-GN-RUm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4a3-Uq-vJd">
+                                <rect key="frame" x="57" y="243" width="300" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-4b-xh7">
+                                        <rect key="frame" x="75" y="172" width="150" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="76t-J0-H3e"/>
+                                            <constraint firstAttribute="height" constant="48" id="pk0-qE-yY0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                        <state key="normal" title="Отправить">
+                                            <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="orderClick:" destination="XIj-ik-vQH" eventType="touchUpInside" id="ibJ-fX-vki"/>
+                                            <action selector="startHighlight:" destination="XIj-ik-vQH" eventType="touchDragEnter" id="Bhd-8x-MVM"/>
+                                            <action selector="startHighlight:" destination="XIj-ik-vQH" eventType="touchDown" id="Lbc-fh-EPg"/>
+                                            <action selector="stopHighlight:" destination="XIj-ik-vQH" eventType="touchDragExit" id="2H3-DK-eHw"/>
+                                            <action selector="stopHighlight:" destination="XIj-ik-vQH" eventType="touchDragOutside" id="6V3-JI-GTP"/>
+                                            <action selector="stopHighlight:" destination="XIj-ik-vQH" eventType="touchUpOutside" id="R6O-He-Pkt"/>
+                                            <action selector="stopHighlight:" destination="XIj-ik-vQH" eventType="touchUpInside" id="tjv-lh-5Wl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отправить заказ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPh-dA-gT9">
+                                        <rect key="frame" x="56" y="40" width="188" height="23"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы постараемся все приготовить к вашему приходу🌿" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRQ-7c-ReM">
+                                        <rect key="frame" x="10" y="83" width="280" height="61"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check-mark" translatesAutoresizingMaskIntoConstraints="NO" id="07Z-Xl-iyn">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="150"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="07Z-Xl-iyn" firstAttribute="leading" secondItem="4a3-Uq-vJd" secondAttribute="leading" id="0Pc-pO-SHL"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Xv-4b-xh7" secondAttribute="bottom" constant="30" id="42h-Dz-U2q"/>
+                                    <constraint firstItem="CRQ-7c-ReM" firstAttribute="leading" secondItem="4a3-Uq-vJd" secondAttribute="leading" constant="10" id="ED2-ZR-4Ht"/>
+                                    <constraint firstAttribute="trailing" secondItem="CRQ-7c-ReM" secondAttribute="trailing" constant="10" id="NTq-Zo-dxd"/>
+                                    <constraint firstAttribute="height" constant="250" id="S6p-qD-0qg"/>
+                                    <constraint firstAttribute="trailing" secondItem="07Z-Xl-iyn" secondAttribute="trailing" id="SDl-cW-4mv"/>
+                                    <constraint firstAttribute="bottom" secondItem="07Z-Xl-iyn" secondAttribute="bottom" constant="50" id="Vjy-rS-WHZ"/>
+                                    <constraint firstItem="07Z-Xl-iyn" firstAttribute="top" secondItem="4a3-Uq-vJd" secondAttribute="top" constant="50" id="X8t-EN-ZrX"/>
+                                    <constraint firstAttribute="width" constant="300" id="g3f-7t-sep"/>
+                                    <constraint firstItem="DPh-dA-gT9" firstAttribute="top" secondItem="4a3-Uq-vJd" secondAttribute="top" constant="40" id="l0x-y0-nd2"/>
+                                    <constraint firstItem="CRQ-7c-ReM" firstAttribute="top" secondItem="DPh-dA-gT9" secondAttribute="bottom" constant="20" id="rgx-Dh-7nb"/>
+                                    <constraint firstItem="DPh-dA-gT9" firstAttribute="centerX" secondItem="4a3-Uq-vJd" secondAttribute="centerX" id="y8n-YL-Fh8"/>
+                                    <constraint firstItem="1Xv-4b-xh7" firstAttribute="centerX" secondItem="4a3-Uq-vJd" secondAttribute="centerX" id="yoa-bT-RLk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="4a3-Uq-vJd" firstAttribute="centerY" secondItem="tO1-GN-RUm" secondAttribute="centerY" id="jQJ-dv-C6H"/>
+                            <constraint firstItem="4a3-Uq-vJd" firstAttribute="centerX" secondItem="tO1-GN-RUm" secondAttribute="centerX" id="xn7-iF-9Eb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pPj-ot-fDb"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="4a3-Uq-vJd" id="8RC-Dg-5ZQ"/>
+                        <outlet property="button" destination="1Xv-4b-xh7" id="nDy-jH-ZTK"/>
+                        <outlet property="imageView" destination="07Z-Xl-iyn" id="Fov-Rw-RqO"/>
+                        <outlet property="label" destination="DPh-dA-gT9" id="UmU-Tx-CqE"/>
+                        <outlet property="subLabel" destination="CRQ-7c-ReM" id="MrU-vD-UEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zyt-iW-tgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679.7101449275362" y="876.35869565217399"/>
+        </scene>
+        <!--Change Name View Controller-->
+        <scene sceneID="U13-VJ-41h">
+            <objects>
+                <viewController id="ttO-MW-7Mx" customClass="ChangeNameViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qgR-cZ-Lfy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="83T-G5-RBA">
+                                <rect key="frame" x="107" y="20" width="200" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="xZ9-sP-hCr"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Имя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-El-HK7">
+                                <rect key="frame" x="20" y="200" width="374" height="22"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-IF-rhY">
+                                <rect key="frame" x="20" y="232" width="374" height="1"/>
+                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="omo-aK-Bif"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Новое имя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDe-21-G0h">
+                                <rect key="frame" x="20" y="263" width="374" height="22"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                                <connections>
+                                    <action selector="newNameDonePressed:" destination="ttO-MW-7Mx" eventType="primaryActionTriggered" id="jRx-wu-Yj7"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z94-WK-1pA">
+                                <rect key="frame" x="20" y="295" width="374" height="1"/>
+                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="IUb-dh-1hK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeA-W2-SS8">
+                                <rect key="frame" x="87" y="356" width="240" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="9iy-Hj-1DD"/>
+                                    <constraint firstAttribute="height" constant="48" id="Vx4-kH-1lm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="cUr-Cm-fBl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="i3I-7y-EaE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFMono-Semibold" family="SF Mono" pointSize="17"/>
+                                <state key="normal" title="Изменить">
+                                    <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeAction:" destination="ttO-MW-7Mx" eventType="touchUpInside" id="8RX-Wk-kx3"/>
+                                    <action selector="startHighlight:" destination="ttO-MW-7Mx" eventType="touchDown" id="OYT-NS-Ii7"/>
+                                    <action selector="startHighlight:" destination="ttO-MW-7Mx" eventType="touchDragInside" id="mht-eb-neS"/>
+                                    <action selector="stopHighlight:" destination="ttO-MW-7Mx" eventType="touchDragOutside" id="9xl-9P-W2m"/>
+                                    <action selector="stopHighlight:" destination="ttO-MW-7Mx" eventType="touchUpOutside" id="FHW-x2-Zf3"/>
+                                    <action selector="stopHighlight:" destination="ttO-MW-7Mx" eventType="touchUpInside" id="SjO-Xx-bDa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="83T-G5-RBA" firstAttribute="top" secondItem="Nz0-nl-r5v" secondAttribute="top" constant="20" id="3Px-Zg-hZ9"/>
+                            <constraint firstItem="Nz0-nl-r5v" firstAttribute="trailing" secondItem="E1Q-El-HK7" secondAttribute="trailing" constant="20" id="3bR-at-QPX"/>
+                            <constraint firstItem="E1Q-El-HK7" firstAttribute="top" secondItem="83T-G5-RBA" secondAttribute="bottom" constant="60" id="4YF-Q1-Oql"/>
+                            <constraint firstItem="iDe-21-G0h" firstAttribute="leading" secondItem="Nz0-nl-r5v" secondAttribute="leading" constant="20" id="AzR-Tc-EqA"/>
+                            <constraint firstAttribute="trailing" secondItem="Z94-WK-1pA" secondAttribute="trailing" constant="20" id="EnK-Mt-cXe"/>
+                            <constraint firstItem="E1Q-El-HK7" firstAttribute="leading" secondItem="Nz0-nl-r5v" secondAttribute="leading" constant="20" id="HSG-kx-gsc"/>
+                            <constraint firstItem="dHa-IF-rhY" firstAttribute="leading" secondItem="qgR-cZ-Lfy" secondAttribute="leading" constant="20" id="K9J-iy-Ls9"/>
+                            <constraint firstItem="dHa-IF-rhY" firstAttribute="top" secondItem="E1Q-El-HK7" secondAttribute="bottom" constant="10" id="Njq-bF-pAc"/>
+                            <constraint firstItem="LeA-W2-SS8" firstAttribute="centerX" secondItem="qgR-cZ-Lfy" secondAttribute="centerX" id="TJH-wF-Hkg"/>
+                            <constraint firstItem="iDe-21-G0h" firstAttribute="top" secondItem="dHa-IF-rhY" secondAttribute="bottom" constant="30" id="TtT-xJ-hEK"/>
+                            <constraint firstItem="Nz0-nl-r5v" firstAttribute="trailing" secondItem="iDe-21-G0h" secondAttribute="trailing" constant="20" id="Vj6-8f-anK"/>
+                            <constraint firstAttribute="trailing" secondItem="dHa-IF-rhY" secondAttribute="trailing" constant="20" id="Z0l-Fq-SAu"/>
+                            <constraint firstItem="Z94-WK-1pA" firstAttribute="leading" secondItem="qgR-cZ-Lfy" secondAttribute="leading" constant="20" id="n4s-ne-dQY"/>
+                            <constraint firstItem="LeA-W2-SS8" firstAttribute="top" secondItem="Z94-WK-1pA" secondAttribute="bottom" constant="60" id="pEM-PR-KBA"/>
+                            <constraint firstItem="Z94-WK-1pA" firstAttribute="top" secondItem="iDe-21-G0h" secondAttribute="bottom" constant="10" id="sLi-xq-HXC"/>
+                            <constraint firstItem="83T-G5-RBA" firstAttribute="centerX" secondItem="qgR-cZ-Lfy" secondAttribute="centerX" id="v4F-pK-DDd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nz0-nl-r5v"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tdt-Yd-6BL"/>
+                    <connections>
+                        <outlet property="changeButton" destination="LeA-W2-SS8" id="Fex-gq-IeJ"/>
+                        <outlet property="newNameTextField" destination="iDe-21-G0h" id="UBU-7K-wH0"/>
+                        <outlet property="oldNameTextField" destination="E1Q-El-HK7" id="War-m6-31I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrd-n2-ILy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1094.2028985507247" y="1227.717391304348"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="fj9-DM-qzo">
             <objects>
-                <viewController id="6N0-yQ-wWP" customClass="ProfileViewController" customModule="Wild_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6N0-yQ-wWP" customClass="ProfileViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C5l-GI-sNa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="VAs-Yf-5XD">
-                                <rect key="frame" x="-677" y="64" width="1768" height="120"/>
+                                <rect key="frame" x="107" y="20" width="200" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="LRW-ZK-mas"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EBl-VH-TyM">
-                                <rect key="frame" x="30" y="224" width="354" height="23"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mw-CZ-8X4">
-                                <rect key="frame" x="30" y="318" width="354" height="33"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
+                                <rect key="frame" x="20" y="354.66666666666669" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
                                 <state key="normal" title="О нас">
                                     <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -356,9 +542,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtA-bR-A5S">
-                                <rect key="frame" x="30" y="366" width="354" height="33"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
-                                <state key="normal" title="Пользовательское соглашение">
+                                <rect key="frame" x="20" y="402.66666666666669" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                <state key="normal" title="Политика Конфидициальности">
                                     <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -366,133 +552,428 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWU-lI-GXo">
-                                <rect key="frame" x="30" y="252" width="354" height="1"/>
+                                <rect key="frame" x="20" y="287.66666666666669" width="374" height="1"/>
                                 <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="yYi-db-9Dh"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3f-lW-ZIF">
-                                <rect key="frame" x="30" y="302" width="354" height="1"/>
+                                <rect key="frame" x="20" y="338.66666666666669" width="374" height="1"/>
                                 <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="9kD-cn-waC"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPX-7g-KBV">
-                                <rect key="frame" x="30" y="273" width="354" height="24"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoB-y6-YMj">
+                                <rect key="frame" x="20" y="450.66666666666669" width="53" height="33"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                <state key="normal" title="Выйти">
+                                    <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOffButtonPressed:" destination="6N0-yQ-wWP" eventType="touchUpInside" id="QlP-dj-7fx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегестрируйтесь или войдите в аккаунт для отправки заказа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0a-FS-EdK">
+                                <rect key="frame" x="20" y="200" width="374" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ri2-CC-Myv">
+                                <rect key="frame" x="20" y="270.66666666666669" width="374" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSg-Mm-wQi">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                        <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Регистрация"/>
+                                        <connections>
+                                            <action selector="startHighlightCheckIn:" destination="6N0-yQ-wWP" eventType="touchDown" id="Mfz-ey-Of4"/>
+                                            <action selector="startHighlightCheckIn:" destination="6N0-yQ-wWP" eventType="touchDragInside" id="XRK-vX-B7O"/>
+                                            <action selector="stopHighlightCheckIn:" destination="6N0-yQ-wWP" eventType="touchUpOutside" id="WKT-aE-cgV"/>
+                                            <action selector="stopHighlightCheckIn:" destination="6N0-yQ-wWP" eventType="touchUpInside" id="dAF-6a-CU8"/>
+                                            <action selector="stopHighlightCheckIn:" destination="6N0-yQ-wWP" eventType="touchDragOutside" id="dBc-y1-pna"/>
+                                            <segue destination="NRn-WM-rtQ" kind="showDetail" identifier="toCheckInFormProfile" id="aku-Da-wYR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJb-4d-pdQ">
+                                        <rect key="frame" x="207" y="0.0" width="167" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                        <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Войти"/>
+                                        <connections>
+                                            <action selector="startHighlightLogin:" destination="6N0-yQ-wWP" eventType="touchDown" id="jGQ-0A-s95"/>
+                                            <action selector="startHighlightLogin:" destination="6N0-yQ-wWP" eventType="touchDragInside" id="oZY-6k-6vI"/>
+                                            <action selector="stopHighlightLogin:" destination="6N0-yQ-wWP" eventType="touchUpInside" id="5RW-lG-Vu0"/>
+                                            <action selector="stopHighlightLogin:" destination="6N0-yQ-wWP" eventType="touchDragOutside" id="7rf-WG-YOP"/>
+                                            <action selector="stopHighlightLogin:" destination="6N0-yQ-wWP" eventType="touchUpOutside" id="Joi-fl-7Hw"/>
+                                            <segue destination="IQg-Ut-88D" kind="showDetail" identifier="toLoginFromProfile" id="dNp-1R-bOJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="nCu-MB-dx9"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1K-Ux-I13">
+                                <rect key="frame" x="20" y="277.66666666666669" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivz-Gy-8Gr">
+                                <rect key="frame" x="20" y="308.33333333333331" width="73.666666666666671" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designet by Ivanilov German" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8H-fm-Ejm">
+                                <rect key="frame" x="98.666666666666686" y="651.33333333333337" width="217" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="13"/>
+                                <color key="textColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-rg-Oer">
+                                <rect key="frame" x="381" y="257.66666666666669" width="13" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="2Tx-GY-MsT"/>
+                                    <constraint firstAttribute="height" constant="18" id="PjT-ib-6x2"/>
+                                </constraints>
+                                <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="chevron.right" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
+                                </state>
+                                <connections>
+                                    <action selector="textInputButtonClick:" destination="twS-a3-tkG" eventType="touchUpInside" id="XaN-cU-ogQ"/>
+                                    <segue destination="ttO-MW-7Mx" kind="show" identifier="toChangeNameFromProfile" id="LFk-iQ-Lao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="V0a-FS-EdK" secondAttribute="trailing" constant="20" id="1iS-SZ-tjj"/>
+                            <constraint firstItem="ri2-CC-Myv" firstAttribute="top" secondItem="V0a-FS-EdK" secondAttribute="bottom" constant="30" id="3nN-VZ-LDq"/>
                             <constraint firstItem="8Mw-CZ-8X4" firstAttribute="top" secondItem="B3f-lW-ZIF" secondAttribute="bottom" constant="15" id="6TF-6h-sbC"/>
-                            <constraint firstItem="OWU-lI-GXo" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="30" id="ASh-el-yK2"/>
-                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="TtA-bR-A5S" secondAttribute="trailing" constant="30" id="C25-gB-0Q8"/>
-                            <constraint firstItem="B3f-lW-ZIF" firstAttribute="top" secondItem="YPX-7g-KBV" secondAttribute="bottom" constant="5" id="JLN-cF-ZF2"/>
-                            <constraint firstItem="EBl-VH-TyM" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="30" id="KzX-Sh-UXR"/>
-                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="OWU-lI-GXo" secondAttribute="trailing" constant="30" id="PpS-66-TKR"/>
+                            <constraint firstItem="v1K-Ux-I13" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="8fx-dA-QFn"/>
+                            <constraint firstItem="OWU-lI-GXo" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="ASh-el-yK2"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="TtA-bR-A5S" secondAttribute="trailing" constant="20" id="C25-gB-0Q8"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="rMw-rg-Oer" secondAttribute="trailing" constant="20" id="HFf-Wk-0da"/>
+                            <constraint firstItem="B3f-lW-ZIF" firstAttribute="top" secondItem="ri2-CC-Myv" secondAttribute="bottom" constant="20" id="JLN-cF-ZF2"/>
+                            <constraint firstItem="V0a-FS-EdK" firstAttribute="leading" secondItem="C5l-GI-sNa" secondAttribute="leading" constant="20" id="Jl9-Ov-Xk7"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="bottom" secondItem="h8H-fm-Ejm" secondAttribute="bottom" constant="20" id="KZk-js-3bN"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="ri2-CC-Myv" secondAttribute="trailing" constant="20" id="MrD-Wv-8ot"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="OWU-lI-GXo" secondAttribute="trailing" constant="20" id="PpS-66-TKR"/>
                             <constraint firstItem="VAs-Yf-5XD" firstAttribute="top" secondItem="xDd-e7-P0L" secondAttribute="top" constant="20" id="Sas-Nr-dXM"/>
                             <constraint firstItem="TtA-bR-A5S" firstAttribute="top" secondItem="8Mw-CZ-8X4" secondAttribute="bottom" constant="15" id="T7o-o8-QzZ"/>
-                            <constraint firstItem="YPX-7g-KBV" firstAttribute="top" secondItem="OWU-lI-GXo" secondAttribute="bottom" constant="20" id="TEm-Md-UVv"/>
-                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="EBl-VH-TyM" secondAttribute="trailing" constant="30" id="WsQ-jR-SS5"/>
-                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="B3f-lW-ZIF" secondAttribute="trailing" constant="30" id="bRl-ky-lRH"/>
-                            <constraint firstItem="EBl-VH-TyM" firstAttribute="top" secondItem="VAs-Yf-5XD" secondAttribute="bottom" constant="40" id="d2z-cJ-sY5"/>
-                            <constraint firstItem="TtA-bR-A5S" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="30" id="kDb-V6-Wlp"/>
+                            <constraint firstItem="BoB-y6-YMj" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="V8a-bZ-t77"/>
+                            <constraint firstItem="Ivz-Gy-8Gr" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="Yjd-EX-eCV"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="B3f-lW-ZIF" secondAttribute="trailing" constant="20" id="bRl-ky-lRH"/>
+                            <constraint firstItem="V0a-FS-EdK" firstAttribute="top" secondItem="VAs-Yf-5XD" secondAttribute="bottom" constant="60" id="cXH-kX-MWE"/>
+                            <constraint firstItem="ri2-CC-Myv" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="fiK-m0-gwk"/>
+                            <constraint firstItem="OWU-lI-GXo" firstAttribute="top" secondItem="rMw-rg-Oer" secondAttribute="bottom" constant="12" id="jWp-7O-ErP"/>
+                            <constraint firstItem="h8H-fm-Ejm" firstAttribute="centerX" secondItem="C5l-GI-sNa" secondAttribute="centerX" id="jxB-5m-YWe"/>
+                            <constraint firstItem="TtA-bR-A5S" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="kDb-V6-Wlp"/>
+                            <constraint firstItem="OWU-lI-GXo" firstAttribute="top" secondItem="v1K-Ux-I13" secondAttribute="bottom" constant="10" id="kwR-c9-5Lj"/>
+                            <constraint firstItem="V0a-FS-EdK" firstAttribute="centerX" secondItem="C5l-GI-sNa" secondAttribute="centerX" id="pMW-E2-hcc"/>
                             <constraint firstItem="VAs-Yf-5XD" firstAttribute="centerX" secondItem="C5l-GI-sNa" secondAttribute="centerX" id="pVv-Bj-rf5"/>
-                            <constraint firstItem="OWU-lI-GXo" firstAttribute="top" secondItem="EBl-VH-TyM" secondAttribute="bottom" constant="5" id="qce-32-2eY"/>
-                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="YPX-7g-KBV" secondAttribute="trailing" constant="30" id="qr4-og-EDF"/>
-                            <constraint firstItem="YPX-7g-KBV" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="30" id="siF-CZ-B7e"/>
-                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="8Mw-CZ-8X4" secondAttribute="trailing" constant="30" id="u5z-LB-Uar"/>
-                            <constraint firstItem="B3f-lW-ZIF" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="30" id="xcq-qF-KWk"/>
-                            <constraint firstItem="8Mw-CZ-8X4" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="30" id="yS1-oU-1Cq"/>
+                            <constraint firstItem="B3f-lW-ZIF" firstAttribute="top" secondItem="Ivz-Gy-8Gr" secondAttribute="bottom" constant="10" id="qDa-Af-6Sp"/>
+                            <constraint firstItem="BoB-y6-YMj" firstAttribute="top" secondItem="TtA-bR-A5S" secondAttribute="bottom" constant="15" id="tSf-NR-sab"/>
+                            <constraint firstItem="xDd-e7-P0L" firstAttribute="trailing" secondItem="8Mw-CZ-8X4" secondAttribute="trailing" constant="20" id="u5z-LB-Uar"/>
+                            <constraint firstItem="B3f-lW-ZIF" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="xcq-qF-KWk"/>
+                            <constraint firstItem="8Mw-CZ-8X4" firstAttribute="leading" secondItem="xDd-e7-P0L" secondAttribute="leading" constant="20" id="yS1-oU-1Cq"/>
+                            <constraint firstItem="B3f-lW-ZIF" firstAttribute="top" secondItem="OWU-lI-GXo" secondAttribute="bottom" constant="50" id="zyN-zF-b1y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xDd-e7-P0L"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="user" id="pZy-HE-Ih7"/>
                     <connections>
-                        <outlet property="nameTextField" destination="EBl-VH-TyM" id="O61-Ad-dU1"/>
-                        <outlet property="phoneNumberTextField" destination="YPX-7g-KBV" id="DSs-dd-xq2"/>
+                        <outlet property="bottomLineConstraint" destination="JLN-cF-ZF2" id="uVK-qb-dwB"/>
+                        <outlet property="buttonToChangeName" destination="rMw-rg-Oer" id="bV2-3Q-O7J"/>
+                        <outlet property="buttonsToLoginStackView" destination="ri2-CC-Myv" id="GGp-Pa-rL1"/>
+                        <outlet property="checkInButton" destination="MSg-Mm-wQi" id="aoG-Pk-so1"/>
+                        <outlet property="logOffButton" destination="BoB-y6-YMj" id="Tkd-Yf-77z"/>
+                        <outlet property="loginButton" destination="nJb-4d-pdQ" id="feo-EK-n3o"/>
+                        <outlet property="nameLabel" destination="v1K-Ux-I13" id="baR-fg-wWg"/>
+                        <outlet property="phoneLabel" destination="Ivz-Gy-8Gr" id="AmX-Qg-ZS0"/>
+                        <outlet property="pleaseRegisterLabel" destination="V0a-FS-EdK" id="IxQ-Nq-WE6"/>
+                        <outlet property="topLineView" destination="OWU-lI-GXo" id="myd-7L-jHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTn-Tg-GPC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-233" y="1190"/>
+            <point key="canvasLocation" x="-233.33333333333334" y="1211.413043478261"/>
         </scene>
-        <!--View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="dD7-Mp-l4N">
             <objects>
-                <viewController id="bfi-Xb-CQK" sceneMemberID="viewController">
+                <viewController id="bfi-Xb-CQK" customClass="AboutUsViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pgO-4I-Uur">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="Qtp-Re-Xew">
-                                <rect key="frame" x="-677" y="20" width="1768" height="120"/>
+                                <rect key="frame" x="107" y="20" width="200" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="NZB-td-Mqh"/>
                                     <constraint firstAttribute="height" constant="120" id="fVu-v6-nhz"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-K2-1AF">
-                                <rect key="frame" x="20" y="160" width="374" height="628"/>
-                                <string key="text">Тут клевый текст о нас, почему
-мы крутые и тд</string>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-K2-1AF">
+                                <rect key="frame" x="20" y="160" width="374" height="456"/>
+                                <string key="text">Wild Coffee в вашем телефоне
+
+Мы создали это приложение, чтобы вам было максимально удобно заказывать кофе в вайлде❤️
+
+Теперь, чтобы не тратить время в очереди или звонить бариста, можно просто сделать предзаказ прямо в приложении, подойти в удобное вам время и забрать ваши любимые напитки🌿
+
+Мы сделаем все возможное, чтобы приготовить заказ прямо к вашему приходу, но если у нас уже много заказов, ваш попадет в очередь и мы будем делать все по порядку😌
+</string>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fxt-lF-1sh">
+                                <rect key="frame" x="107" y="636" width="200" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-Oe-Tic">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inst_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wnM-bY-9j9">
+                                        <rect key="frame" x="110" y="0.0" width="90" height="40"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="o3e-Oz-JTN"/>
+                                    <constraint firstAttribute="height" constant="40" id="rnR-AC-x3Z"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="y8z-nx-4yM" firstAttribute="bottom" secondItem="fxt-lF-1sh" secondAttribute="bottom" constant="40" id="2cC-Cn-IxA"/>
                             <constraint firstItem="y8z-nx-4yM" firstAttribute="trailing" secondItem="ae4-K2-1AF" secondAttribute="trailing" constant="20" id="7hS-4O-ba0"/>
                             <constraint firstItem="ae4-K2-1AF" firstAttribute="top" secondItem="Qtp-Re-Xew" secondAttribute="bottom" constant="20" id="98U-MX-osu"/>
                             <constraint firstItem="Qtp-Re-Xew" firstAttribute="centerX" secondItem="pgO-4I-Uur" secondAttribute="centerX" id="D8v-ES-3Q2"/>
-                            <constraint firstItem="ae4-K2-1AF" firstAttribute="leading" secondItem="y8z-nx-4yM" secondAttribute="leading" constant="20" id="Mh8-Md-SIl"/>
+                            <constraint firstItem="ae4-K2-1AF" firstAttribute="leading" secondItem="y8z-nx-4yM" secondAttribute="leading" constant="20" id="Mh8-Md-SIl" userLabel="Тут клевый текст о нас, почему мы крутые и тд.leading = Safe Area.leading + 20"/>
                             <constraint firstItem="ae4-K2-1AF" firstAttribute="top" secondItem="Qtp-Re-Xew" secondAttribute="bottom" constant="20" id="TIf-wh-y62"/>
                             <constraint firstItem="Qtp-Re-Xew" firstAttribute="top" secondItem="y8z-nx-4yM" secondAttribute="top" constant="20" id="XsA-QO-xny"/>
-                            <constraint firstItem="y8z-nx-4yM" firstAttribute="bottom" secondItem="ae4-K2-1AF" secondAttribute="bottom" constant="20" id="cW1-rm-tFk"/>
+                            <constraint firstItem="y8z-nx-4yM" firstAttribute="bottom" secondItem="ae4-K2-1AF" secondAttribute="bottom" constant="100" id="cW1-rm-tFk"/>
+                            <constraint firstItem="fxt-lF-1sh" firstAttribute="centerX" secondItem="pgO-4I-Uur" secondAttribute="centerX" id="xRC-Mu-Nuq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y8z-nx-4yM"/>
                     </view>
                     <navigationItem key="navigationItem" id="vQu-Y1-V0o"/>
+                    <connections>
+                        <outlet property="callImageView" destination="kZf-Oe-Tic" id="FRe-wy-45E"/>
+                        <outlet property="instImageView" destination="wnM-bY-9j9" id="wke-Qa-Tmh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31v-0h-Odp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-233" y="1976"/>
+            <point key="canvasLocation" x="-233.33333333333334" y="1975.271739130435"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7uT-di-g0c">
             <objects>
                 <viewController id="bA4-D8-2C4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1s6-R6-eoD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="hwe-8K-17g">
-                                <rect key="frame" x="-677" y="20" width="1768" height="120"/>
+                                <rect key="frame" x="107" y="20" width="200" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="5SP-uP-Ikl"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="cwV-sT-LfW"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут написана какая-то занудная фигня" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV5-Bf-WyQ">
-                                <rect key="frame" x="20" y="160" width="374" height="628"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEe-nH-znh">
+                                <rect key="frame" x="10" y="160" width="394" height="546"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ,  ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ, ПРАВИЛА ОПЛАТЫ
+
+
+ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+ИП Иванилов Герман Владимирович (далее — Wild Coffee),  соблюдает права пользователей (далее – Пользователи или Вы) на неразглашение личной информации и в полной мере принимает на себя обязательства по сохранению личных данных, переданных в адрес компании. Компания Wild Coffee уверена, что Пользователи (включая зарегистрированных) ее продукции и услуг имеют полное право знать о политике и способах обработки информации, получаемой ею во время, получения доступа и использования ее Приложения «Wild Coffee» (далее — Приложение), а также в ходе использования Услуг (определение которых можно найти в Лицензионном  соглашении с компанией Wild Coffee (далее — ЛС).
+СОГЛАСИЕ
+Пожалуйста, внимательно ознакомьтесь со следующей информацией:
+Используя услуги, получая доступ к приложению, предоставляя информацию посредством указанного Приложения, регистрируя учетную запись/профиль в приложении, Вы соглашаетесь с правилами, описанными в тексте политики конфиденциальности, включая те, которые имеют отношение к сбору и обработке ваших личных персональных данных (как указано ниже) (далее — политика конфиденциальности).
+СБОР ИНФОРМАЦИИ
+Компания Wild Coffee может собирать анонимную неличную информацию (далее – Неличная информация), предоставленную Пользователями. К неличной информации относится любая нескрываемая информация, которая становится доступной компании Wild Coffee во время непосредственного использования Приложения. Неличная информация может содержать, помимо прочего, данные об идентификации браузера Пользователя, так же как и оперативной системы, порядок посещения страниц Пользователем, время и дату подключения Пользователя и т.п. Данная информация собирается для ведения статистики и применяется для улучшения качества Услуг, предоставляемых компанией, а также усовершенствования интерфейса Приложения.
+Компания может собирать Личную информацию (Персональные данные), добровольно и сознательно предоставляемую Пользователями во время создания Учетной записи/Профиля через приложение или регистрации иным способом для получения Услуг. «Личная информация» означает персональные данные, такие как фамилия и имя, номер мобильного телефона и адрес электронной почты. Кроме того, чтобы наиболее эффективно предоставлять Услуги, компания собирает информацию о вашем местонахождении при помощи GPS-навигатора, beacon-устройств, которая (информация) может быть идентифицирована и передана исполнителям услуг.
+Во избежание недоразумений любая Неличная информация, имеющая отношение к Личной информации или связанная с ней, будет рассматриваться как Личная до тех пор, пока существует такая связь либо отношение.
+ИСПОЛЬЗОВАНИЕ ИНФОРМАЦИИ
+Компания Wild Coffee может использовать Личную информацию, чтобы:
+1) предоставлять Услуги;
+2) отправлять сообщения Пользователям относительно Услуг (например, касающиеся статуса готовности их заказа);
+3) предоставлять пользователям поддержку;
+4) отправлять рекламные материалы для целевой аудитории и сообщать о льготных предложениях (далее – Рекламные материалы);
+5) идентифицировать пользователя при получении заказа;
+РАЗГЛАШЕНИЕ ИНФОРМАЦИИ
+Компании Wild Coffee обязуются не разглашать Личную информацию, полученную ими от третьих лиц.
+Несмотря на это, они могут раскрывать подобную информацию в следующих случаях:
+1. для соблюдения требований применимого закона, постановления, судебного процесса, судебной повестки или требований правительства;
+2. для обеспечения соблюдения данной Политики конфиденциальности или ЛС, включая исследование потенциальных нарушений указанных регламентов;
+3. для обнаружения, предотвращения или решения вопросов, связанных с обманом, безопасностью или техническими аспектами;
+4. для ответов на просьбы Пользователей о поддержке;
+5. для реагирования на претензии относительно того, что то или иное информационное наполнение нарушает права третьих лиц;
+6. для реагирования на претензии относительно того, что контактная информация (например, имя, телефон и т.п.) третьей стороны были опубликованы или переданы без ее согласия или в качестве оскорбления;
+7. для защиты прав, собственности или личной безопасности компании Wild Coffee, их Пользователей или широкой публики;
+8. если в компании меняется система управления, включая случаи слияния, поглощения или покупки всего имущества компании либо значительной его части;
+9. согласно вашему ясно выраженному предварительному разрешению.
+Во избежание недоразумений компания может передавать и разглашать Не личную информацию третьим лицам по собственному усмотрению.
+ИЗМЕНЕНИЕ ЛИЧНОЙ ИНФОРМАЦИИ
+Пользователи могут получать доступ к своей Учетной записи/к своему Профилю и вносить изменения в графу с Личной информацией. Информацию о том, как отправить запрос на изменение любой Личной информации, предоставленной вами Wild Coffee, обратитесь по электронному адресу ivanilovgerman@gmail.com
+БЕЗОПАСНОСТЬ
+Для обеспечения и поддержания безопасности Личной информации пользователей применяются стандартные отраслевые технологии и методы, чтобы гарантировать безопасность пользовательских данных, а также предотвратить их несанкционированное использование. Среди других способов пользовательская Личная информация защищена:
+- номер телефона, имя и фамилия клиента на уровне операционной системы мобильного телефона;
+- данные необходимые для проведения платежей хранятся с помощью функции KeyChain c использованием 256-битного шифрования AES;
+- данные о заказах Пользователей хранятся на удаленном сервере и защищены стандартными средствами хостинг провайдера;
+Несмотря на это, компании не могут гарантировать абсолютной защиты данных. Пользователи должны держать в секрете номер своей Учетной записи/Профиля и иную информацию о ней.
+ИЗМЕНЕНИЯ
+Положения Политики конфиденциальности являются неотъемлемой частью этого Приложения и любой информации, размещенной в нем, и не могут рассматриваться отдельно от Лицензионного соглашения.
+Компания Wild Coffee оставляет за собой право менять Политику конфиденциальности в любое время. В случае значительных изменений компания может уведомить об этом Пользователей. Изменения к данной Политике конфиденциальности вступают в силу с момента опубликования. Продолжая пользоваться Приложением после даты выхода новой версии Политики Конфиденциальности, Вы соглашаетесь на внесенные изменения и соблюдение правил, основанных на таких изменениях.
+ПРАВИЛА ОПЛАТЫ
+Ознакомиться с правила оплаты можно ниже.
+
+
+
+ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ
+1. ИНФОРМАЦИЯ О ПРАВООБЛАДАТЕЛЯХ
+ИП Иванилов Герман Владимирович
+2. ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ С КОНЕЧНЫМ ПОЛЬЗОВАТЕЛЕМ
+Данная информация определяет условия и правила использования Приложения, а также определяет правила и условия пользования любым лицом возможностями, предоставляемыми данным Приложением.
+Устанавливая Приложение на свое мобильное устройство Вы тем самым соглашаетесь в безусловном порядке со всеми правилами, условиями и информацией, размещенными в приложении, в том числе, но не ограничиваясь: настоящим лицензионным соглашением, политикой конфиденциальности и условиями оплаты.
+Если Вы не согласны с настоящим соглашением, а также условиями и положениями политики конфиденциальности и правилами пользования Приложением, не хотите их соблюдать, не устанавливайте Приложение, незамедлительно удалите его с мобильного телефона и не пользуйтесь Приложением. В случае, если Вы по каким-либо причинам не согласны с вышеприведенными правилами или условиями, то это означает Вашу обязанность по удалению Приложения со своего мобильного устройства. В противном случае, Вы будете считаться согласным в безусловном порядке со всеми правилами и условиями.
+3. ПРАВО СОБСТВЕННОСТИ
+Единоличным владельцем Приложения и документации, имеющей отношение к нему, является Wild Coffee. Любые права на интеллектуальную собственность (включая, помимо прочего, авторское право, коммерческую тайну, торговые марки, патенты и т.п.), вытекающие из Приложения, заключенные в нем, имеющие отношение к нему, связанные с ним или закрепленные за ним, принадлежат Wild Coffee. Данное Соглашение не предусматривает передачу имущественных прав на Приложение или его компоненты, но предоставляет ограниченное право на использование Приложения, которое может быть отозвано в соответствии с условиями Соглашения. Ни одно из положений данного Соглашения не может рассматриваться как отказ Wild Coffee, от своих прав на интеллектуальную собственность, в какой бы то ни было юрисдикции.
+4. ЛИЦЕНЗИЯ
+Компания Wild Coffee предоставляет вам, а вы принимаете персональную неисключительную некоммерческую ограниченную лицензию без права передачи, сублицензирования, которая может быть в любой момент аннулирована, на использование Приложения в мобильном телефоне, которым вы владеете или распоряжаетесь, в соответствии с условиями, изложенными в тексте настоящего Соглашения.
+Компания оставляет за собой все права, которые могут быть непрямо выражены в этом Соглашении.
+Запрещенные способы использования:
+Если в тексте настоящих условий специально не указано иное, то вы не можете без предварительного письменного согласия компании Wild Coffee
+1) использовать, модифицировать, встраивать в другое программное обеспечение или объединять с ним, создавать переработанную версию любой части Приложения;
+2) продавать, выдавать лицензии (сублицензии), отдавать в аренду, переуступать, передавать, отдавать в залог, разделять права по настоящему Соглашению третьим лицам;
+3) копировать, распространять или воспроизводить Приложение в интересах третьих лиц;
+4) обнародовать результаты какого-либо сопоставительного анализа касательно Приложения, использовать упомянутые результаты для вашей собственной конкурирующей деятельности по разработке программного обеспечения;
+5) модифицировать, дизассемблировать, декомпилировать, разбирать на составляющие коды, перерабатывать или усовершенствовать Приложение, пытаться получить исходный текст/код программы Приложения.
+5. ОБСЛУЖИВАНИЕ И ПОДДЕРЖКА
+Компания Wild Coffee по данному Соглашению не обязана предоставлять поддержку, обслуживание, обновления, модификации и новые версии Приложения.
+Однако она может время от времени выпускать обновления для Приложения и автоматически путем электронной коммуникации обновлять его версию, установленную в вашем мобильном телефоне. Вы даете согласие на такое автоматическое обновление, а также принимаете то, что условия и положения данного Соглашения будут иметь силу для будущих указанных обновлений.
+6. ОТКАЗ ОТ ГАРАНТИЙНЫХ ОБЯЗАТЕЛЬСТВ
+Приложение предоставляется без гарантии качества, не предполагает каких-либо гарантий, прямо выраженных или подразумеваемых. Компания Wild Coffee не гарантирует, что приложение будет соответствовать вашим требованиям, а также что его работа будет бесперебойной и безошибочной, а также что его работа будет соответствовать Вашему представлению о его должной работе..
+В установленных законом случаях компании Wild Coffee открыто заявляют об отказе от любых прямых гарантий, включая, помимо прочего, гарантию чистоты прав собственности и отсутствия нарушения прав, а также от любых подразумеваемых гарантий, включая (но не ограничиваясь) косвенные гарантии коммерческой пригодности и пригодности для определенного применения. Компания Wild Coffee не несут ответственности за точность, полноту, применимость или надежность результатов, полученных в ходе использования приложения или каких-либо данных и информации, загруженной либо иным способом полученной посредством использования приложения. Вы принимаете на себя ответственность загружать, иным способом получать информацию через приложение на собственный риск и по собственному усмотрению, при этом к компании Wild Coffee не могут быть предъявлены претензии относительно ущерба, полученного вами или в отношении вашей собственности.
+7. ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ
+Компания Wild Coffee не несет ответственности ни в силу договора, ни вследствие правонарушения (включая небрежность), а также в иных случаях перед Вами или третьими лицами за любой ущерб или убытки (включая косвенные, фактические, последующие), а также, помимо прочего, какой-либо ущерб или убытки в отношении дохода от коммерческой деятельности, неполученной прибыли (упущенной выгоды), деловой репутации, поврежденных или утраченных данных либо документации, понесенные тем или иным лицом вследствие или в связи с использованием Приложения, даже если компаниям стало известно о возможности возникновения такого ущерба.
+8. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ
+Если, несмотря на условия настоящего соглашения, компания Wild Coffee будет признана ответственной за ущерб, сумма возмещения не будет превышать ста долларов США ($100).
+9. ОКОНЧАНИЕ СРОКА ДЕЙСТВИЯ ЛИЦЕНЗИИ
+Компания Wild Coffee может прекратить действие выданной лицензии в любое время и по любой причине. Помимо этого, нарушение вами условий настоящего Соглашения приведет к аннулированию вашей лицензии и самого Соглашения. После истечения срока действия Соглашения с компанией Wild Coffee:
+1. лицензия, предоставляемая по нему, потеряет действительность, и вы вынуждены будете прекратить пользоваться Приложением;
+2. вы должны будете незамедлительно вернуть компаниям Wild Coffee все материальное имущество, представляющее собой права компании Wild Coffee на интеллектуальную собственность, а также все копии таковой и/или сотрете/удалите любую такую информацию, хранимую в электронном виде. Пункты 1, 3, 5-10 не теряют силы и после окончания действия настоящего Соглашения.
+10. ПРИМЕНИМОЕ ПРАВО
+Настоящее соглашение будет истолковываться и регулироваться в соответствии с законодательством Российской Федерации (за исключением случаев, когда правовые нормы предусматривают иное), а компетентные суды города Томска будут обладать исключительной юрисдикцией в решении любых споров или конфликтов, возникающих в связи с настоящим Соглашением.
+Применение Конвенции ООН о договорах международной купле-продаже товаров явным образом исключается.
+11. ОСВОБОЖДЕНИЕ ОТ ОТВЕТСТВЕННОСТИ
+Вы обязуетесь защищать права, освобождать от ответственности, обеспечивать не причинение ущерба компании Wild Coffee, ее директорам, служащим, лицензиарам, работникам и представителям в связи с любыми претензиями, ущербом, убытками, затратами, долговыми обязательствами и расходами (включая, помимо прочего, оплату юридических услуг), возникшими вследствие любого нарушения условий этого Соглашения.
+12. ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ (ПО) ТРЕТЬИХ ЛИЦ
+Если Приложение содержит какое-либо программное обеспечение третьих лиц, такое ПО поставляется без гарантий качества, а его использование регулируется условиями и ограничениями, установленными упомянутыми третьими сторонами.
+13. ИНФОРМАЦИЯ О ПРИЛОЖЕНИИ
+Используя Приложение, Вы получаете возможность:
+- получать список меню с ценами кофеен сети Wild Coffee;
+- заказа кофе и напитков в сети кофеен Wild Coffee к определенному времени с возможностью оплаты банковской картой или наличными при получении;
+Для корректной работы Приложения, а также во избежание претензий, Вам необходимо заполнить все поля во вкладке «Профиль», а именно: Имя и Номер телефона.
+Используя Приложение, Вы делаете свой заказ, выбирая из предложенных позиций, разбитых на категории, необходимую Вам. На экране заказа вводите всю необходимую информацию, а именно:
+- указываете промежуток времени, по истечении которого Ваш заказ должен быть готов
+- оставляете какой-либо комментарий (в случае необходимости)
+При нажатии кнопки “Заказать” Вы тем самым подтверждаете Ваше согласие со всеми условиями предоставления услуги, а также Ваш отказ от претензий в случае, если исполнение заказа не соответствует или не будет соответствовать Вашему представлению о должном исполнении.
+В Приложении предусмотрено 2 способа оплаты Вашего заказа:
+1) оплата наличными непосредственно при получении заказа
+2) оплата банковской картой непосредственно при получении заказа
+Компания Wild Coffee предоставляет исключительные права пользования Приложением и ни при каких обстоятельствах не оказывает и не будет оказывать иные услуги, связанные с деятельностью компании Wild Coffee, равно как и не несет и не будет нести какую-либо ответственность за оказываемые Wild Coffee услуги. Договор купле-продажи заключается непосредственно между Вами и СWild Coffee. В соответствии с действующим законодательством ответственность, которая может быть предусмотрена вследствие неисполнения либо ненадлежащего исполнения оказываемой услуги, в том числе при предоставлении информации об услуге, условиях оказания услуги, тарифах и ценах, а также непосредственно оказании услуги, ее безопасности, причинении ущерба при оказании услуги несет исключительно исполнитель. Вы имеете право предъявить ваши претензии и требования непосредственно исполнителю.
+При пользовании Приложением Вы подтверждаете, что являетесь законным владельцем мобильного телефона, на котором установлено Приложение, а также надлежаще зарегистрированным и законным пользователем услуг подвижной радиотелефонной связи или телематических услуг, позволяющих использовать возможности передачи данных для использования Приложения и Вашей идентификации как пользователя Приложения. Также, Вы безусловно соглашаетесь на получение сервисных sms-сообщений, необходимых для реализации функционала Приложения.
+14. ИНФОРМАЦИОННОЕ СОПРОВОЖДЕНИЕ
+Wild Coffee вправе информировать Вас о порядке и способах использования Приложения, о проводимых Wild Coffee маркетинговых, рекламных и иных мероприятиях, об условиях приобретения и потребления услуг третьих лиц с использованием Приложения, путем направления сообщений, в том числе содержащих рекламу, на мобильный телефон, в том числе с использованием сети связи, любым доступным Wild Coffee способом.
+Принятие условий настоящего лицензионного соглашения означает Ваше безусловное согласие со всеми его разделами, указанными правами, принадлежащими Wild Coffee.
+
+
+ПРАВИЛА ОПЛАТЫ
+1. ИСПОЛЬЗУЕМЫЕ ТЕРМИНЫ
+Банк - кредитная организация, которая имеет исключительное право осуществлять в совокупности следующие банковские операции: привлечение во вклады денежных средств физических и юридических лиц, размещение указанных средств от своего имени и за свой счет на условиях возвратности, платности, срочности, открытие и ведение банковских счетов физических и юридических лиц
+Банковская карта - банковская карта международной платежной системы MasterCard, Visa.
+Wild Coffee – Индивидуальный предприниматель Иванилов Герман Владимирович,
+юридический адрес: Кемеровская обл. г. Новокузнецк ул. Кирова 6а -32
+фактический адрес: Томская обл. г. Томск ул. Розы Люксембург 26
+ИНН 421720957342,
+запись в Едином государственном реестре юридических лиц за основным государственным регистрационным номером 318420500033264.
+р/с 40802810723200001073
+в ФИЛИАЛ "НОВОСИБИРСКИЙ" АО "АЛЬФА-БАНК"
+БИК 045004774
+Кор. Счет 30101810600000000774
+ОКВЭД 56.30 
+ОКПО 0129569623
+Тел/ +7 (999) 495-34-76
+Email: ivanilovgerman@gmail.com
+Клиент – физическое лицо, которому оказана Услуга
+Международная платежная система - международные платежные системы MasterCard, Visa. Исходя из контекста настоящих Условий определяются в зависимости от принадлежности Банковской карты Клиента к определенной международной платежной системе.
+Условия – настоящие Условия оплаты Услуг
+2. ОБЩИЕ ПОЛОЖЕНИЯ
+Клиент имеет возможность посредством приложения заказать Услуги. При этом договор купли-продажи заключается и обязанными сторонами по нему непосредственно становятся Wild Coffee и Клиент.
+Оплата Услуг производится по тарифам Wild Coffee.
+Клиент по условиям договора купли-продажи и в соответствии с действующим законодательством имеет обязанность по оплате оказанных ему Услуг. Оплата посредством передачи наличных денежных средств осуществляется Клиентом путем непосредственной передачи наличных денежных средств продавцу/бариста, осуществившему оказание Услуги, и данными Условиями не регулируется.
+При наличии технической возможности осуществления расчетов за Услуги посредством использования Банковских карт Клиент имеет право произвести оплату за предоставленные Услуги посредством использования своей Банковской карты.
+При этом, Wild Coffee осуществляет информационное и технологическое взаимодействие для обеспечения приема платежей посредством Банковских карт, и осуществляет сбор денежных средств причитающихся по оказанным Услугам.
+При осуществлении платежей посредством использования Банковских карт Клиент обязан соблюдать установленные правила и требования международных платежных систем, а также банков, эмитировавших Банковские карты Клиента, регулирующих осуществление платежей с использованием Банковских карт.
+Осуществление безналичных расчетов с использованием Банковских карт осуществляется Банком. Wild Coffee отвечает исключительно за правильность определения стоимости подлежащей оплате Услуг и доведения указанной информации до Банка.
+Настоящие Условия являются публичной офертой в соответствии со ст.435 и ч.2 ст.437 ГК РФ. Соблюдая требования к обеспечению возможности оплаты Услуг посредством Банковских карт Клиента, указанные в п.3. настоящих Условий и/или производя оплату Услуг посредством использования Банковских карт, Клиент, безусловно и безоговорочно принимает и соглашается с настоящим Условиями.
+3. ТРЕБОВАНИЯ
+Для обеспечения возможности осуществления расчетов за оказанные Услуги Клиент обязан:
+- установить на свое личное мобильное устройство (телефон, смартфон, и т.п.), работающих под операционными системами iOs или Android, приложение (программу) «Wild Coffee». 
+- авторизоваться в системе использую свое имя и номер телефона.
+4. ПОРЯДОК ОПЛАТЫ
+Оплата оказанных Услуг допускается при соблюдения Клиентом Требований  Лицензионного соглашении.
+Для корректной работы Приложения, а также во избежание претензий, Вам необходимо заполнить все поля во вкладке «Профиль», а именно: Имя и номер телефона. Используя Приложение, Вы делаете свой заказ, выбирая из предложенных позиций, разбитых на категории, необходимую Вам. На экране заказа вводите всю необходимую информацию, а именно:
+- указываете промежуток времени, по истечении которого Ваш заказ должен быть готов
+- оставляете какой-либо комментарий (в случае необходимости)
+При нажатии кнопки “Заказать” Вы тем самым подтверждаете Ваше согласие со всеми условиями предоставления услуги, а также Ваш отказ от претензий в случае, если исполнение заказа не соответствует или не будет соответствовать Вашему представлению о должном исполнении.
+В Приложении предусмотрено 2 способа оплаты Вашего заказа:
+1) оплата наличными непосредственно при получении заказа
+2) оплата с помощью банковской карты, при получении заказа.
+4.1. Выдача заказа
+При получении Вашего заказа Вам необходимо сообщить служащему Wild Cofee/бариста ваше имя и номер телефона (при необходимости).
+5. ВОЗВРАТ ПЛАТЕЖЕЙ
+Порядок возврата регулируется правилами международных платежных систем.
+Для возврата денежных средств на банковскую карту Заказчику необходимо обратиться к Wild Coffee по телефону +7 (999) 495-34-76 и при необходимости заполнить «Заявление о возврате денежных средств», которое высылается по требованию Компанией на электронный адрес Заказчика, и оправить его вместе с приложением копии паспорта по адресу: ivanilovgerman@gmail.com.
+Возврат денежных средств будет осуществлен на банковский счет Заказчика, указанный в заявлении, в течение 21 (двадцати одного) рабочего дня со дня обращения в Компанию. Срок рассмотрения Заявления о возврате 5 рабочих дней, с момента обращения. Для возврата средств необходимо прийти в Компанию по Фактическому Адресу.
+Покупатель вправе задать все возникшие вопросы Продавцу по телефону: +7 999 495-34-76
+6. ГАРАНТИИ
+Wild Coffee не несет какую-либо ответственность за любой возможный ущерб, причиненный Клиенту вследствие ненадлежащего оказания Услуги.
+Coffee не несет ответственности за работоспособность и обеспечение сохранности и безопасности передаваемой информации при обеспечении и проведении платежей посредством Банковских карт Клиента, в том числе за действия Банка и международных платежных систем, банков и иных участников расчетов.
+Все взаимоотношения в части проведения расчетов с использованием Банковских карт регулируются обязательными для Клиента условиями международных платежных систем и договорами Клиента с банком, эмитировавшим Банковскую карту Клиента.
+Клиент обязуется не передавать третьим лицам, свое личное мобильное устройство (телефон, смартфон, и т.п.), с установленным приложением (программой). В
+7. КОНФИДЕНЦИАЛЬНОСТЬ
+Принимая настоящие Условия Клиент подтверждает, что он ознакомился и безусловно подтверждает свое согласие с правилами, описанными в тексте политики конфиденциальности, включая те, которые имеют отношение к сбору и обработке ваших личных данных.
+8. ПРОЧИЕ УСЛОВИЯ
+К отношениям между Клиентом и Wild Coffee применяется законодательство Российской Федерации. В случае возникновения вопросов и претензий со стороны Клиента он должен обратиться в Wild Coffee по телефону +7 (999) 495-34-76 или по электронной почте ivanilovgerman@gmail.com
+Все возникающее споры стороны будут стараться решить путем переговоров, при недостижении соглашения спор будет передан на рассмотрение в судебный орган в соответствии с действующим законодательством РФ.
+Признание судом недействительности какого-либо положения настоящих Условий и правил не влечет за собой недействительность остальных положений.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cV5-Bf-WyQ" firstAttribute="leading" secondItem="ja2-gL-ZIx" secondAttribute="leading" constant="20" id="FJH-Zp-buQ"/>
-                            <constraint firstItem="cV5-Bf-WyQ" firstAttribute="leading" secondItem="ja2-gL-ZIx" secondAttribute="leading" constant="20" id="GAy-1E-sPn"/>
-                            <constraint firstItem="cV5-Bf-WyQ" firstAttribute="top" secondItem="hwe-8K-17g" secondAttribute="bottom" constant="20" id="Jte-w5-7y8"/>
+                            <constraint firstItem="ja2-gL-ZIx" firstAttribute="trailing" secondItem="qEe-nH-znh" secondAttribute="trailing" constant="10" id="D4Q-CJ-TqH"/>
+                            <constraint firstItem="qEe-nH-znh" firstAttribute="top" secondItem="hwe-8K-17g" secondAttribute="bottom" constant="20" id="LT2-JB-Rl6"/>
                             <constraint firstItem="hwe-8K-17g" firstAttribute="centerX" secondItem="1s6-R6-eoD" secondAttribute="centerX" id="T6V-Md-EhU"/>
-                            <constraint firstItem="ja2-gL-ZIx" firstAttribute="bottom" secondItem="cV5-Bf-WyQ" secondAttribute="bottom" constant="20" id="bGl-aY-rLw"/>
                             <constraint firstItem="hwe-8K-17g" firstAttribute="top" secondItem="ja2-gL-ZIx" secondAttribute="top" constant="20" id="dYy-hn-k7p"/>
-                            <constraint firstItem="ja2-gL-ZIx" firstAttribute="trailing" secondItem="cV5-Bf-WyQ" secondAttribute="trailing" constant="20" id="zP6-sd-1xH"/>
+                            <constraint firstItem="ja2-gL-ZIx" firstAttribute="bottom" secondItem="qEe-nH-znh" secondAttribute="bottom" constant="10" id="jQk-hc-tJW"/>
+                            <constraint firstItem="qEe-nH-znh" firstAttribute="leading" secondItem="ja2-gL-ZIx" secondAttribute="leading" constant="10" id="uBV-b0-f97"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ja2-gL-ZIx"/>
                     </view>
@@ -500,30 +981,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7R8-2S-BXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809" y="1190"/>
+            <point key="canvasLocation" x="796" y="1211"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ldA-FI-6ZX">
             <objects>
-                <viewController id="d66-nx-8wo" customClass="MenuViewController" customModule="Wild_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d66-nx-8wo" customClass="MenuViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uo3-dp-TD8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wML-rd-OZY">
-                                <rect key="frame" x="20" y="194" width="374" height="619"/>
+                                <rect key="frame" x="20" y="190" width="374" height="497"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="9zw-Gr-6aA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="10" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="mRz-cW-eFO"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qt3-1X-XSz">
-                                <rect key="frame" x="20" y="159" width="374" height="25"/>
+                                <rect key="frame" x="20" y="135" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="St6-gt-0Zq"/>
+                                    <constraint firstAttribute="height" constant="50" id="St6-gt-0Zq"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EDZ-Ra-T9u">
                                     <size key="itemSize" width="122" height="32"/>
@@ -533,15 +1014,22 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xsM-xy-2rr">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9zw-Gr-6aA" firstAttribute="top" secondItem="XxK-Nb-nRl" secondAttribute="top" id="6Gg-yF-Qjh"/>
+                            <constraint firstItem="9zw-Gr-6aA" firstAttribute="top" secondItem="XxK-Nb-nRl" secondAttribute="top" constant="10" id="6Gg-yF-Qjh"/>
                             <constraint firstItem="9zw-Gr-6aA" firstAttribute="trailing" secondItem="XxK-Nb-nRl" secondAttribute="trailing" id="DAX-s3-ejV"/>
                             <constraint firstItem="9zw-Gr-6aA" firstAttribute="leading" secondItem="XxK-Nb-nRl" secondAttribute="leading" id="KYc-LH-OjR"/>
-                            <constraint firstItem="wML-rd-OZY" firstAttribute="top" secondItem="qt3-1X-XSz" secondAttribute="bottom" constant="10" id="Mhb-a4-s7e"/>
+                            <constraint firstItem="wML-rd-OZY" firstAttribute="top" secondItem="qt3-1X-XSz" secondAttribute="bottom" constant="5" id="Mhb-a4-s7e"/>
                             <constraint firstItem="XxK-Nb-nRl" firstAttribute="trailing" secondItem="wML-rd-OZY" secondAttribute="trailing" constant="20" id="NXc-vi-MwJ"/>
-                            <constraint firstItem="qt3-1X-XSz" firstAttribute="top" secondItem="9zw-Gr-6aA" secondAttribute="bottom" constant="15" id="Wun-sp-g3G"/>
+                            <constraint firstItem="qt3-1X-XSz" firstAttribute="top" secondItem="9zw-Gr-6aA" secondAttribute="bottom" constant="25" id="Wun-sp-g3G"/>
+                            <constraint firstItem="xsM-xy-2rr" firstAttribute="centerY" secondItem="Uo3-dp-TD8" secondAttribute="centerY" id="YVE-bg-JmH"/>
+                            <constraint firstItem="xsM-xy-2rr" firstAttribute="centerX" secondItem="Uo3-dp-TD8" secondAttribute="centerX" id="fE7-Yz-Fal"/>
                             <constraint firstItem="XxK-Nb-nRl" firstAttribute="trailing" secondItem="qt3-1X-XSz" secondAttribute="trailing" constant="20" id="fSG-pu-cyd"/>
                             <constraint firstItem="qt3-1X-XSz" firstAttribute="leading" secondItem="XxK-Nb-nRl" secondAttribute="leading" constant="20" id="r66-ze-b9S"/>
                             <constraint firstItem="wML-rd-OZY" firstAttribute="leading" secondItem="XxK-Nb-nRl" secondAttribute="leading" constant="20" id="tq2-G7-VaV"/>
@@ -553,82 +1041,169 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="qt3-1X-XSz" id="Ppt-lX-rmx"/>
+                        <outlet property="imageViewTopConstraint" destination="6Gg-yF-Qjh" id="Ynm-Lw-XqZ"/>
+                        <outlet property="progressIndicator" destination="xsM-xy-2rr" id="dWh-X5-j7X"/>
                         <outlet property="tableView" destination="wML-rd-OZY" id="8PX-bc-HW3"/>
                         <segue destination="0pr-JI-YRQ" kind="show" identifier="ToCardFromMenu" id="N6x-HQ-QmJ"/>
+                        <segue destination="NRn-WM-rtQ" kind="show" identifier="toRegistrationFromMenu" id="g8P-dx-8F8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZj-mO-9It" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-233" y="-271"/>
         </scene>
-        <!--Registration View Controller-->
-        <scene sceneID="ogL-c8-K50">
+        <!--Login View Controller-->
+        <scene sceneID="CeU-a1-xfN">
             <objects>
-                <viewController storyboardIdentifier="RegistrationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nSP-WT-Hl5" customClass="RegistrationViewController" customModule="Wild_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xXV-Fp-KUG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IQg-Ut-88D" customClass="LoginViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N8R-nH-tcO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваше имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjj-Bc-QSV">
-                                <rect key="frame" x="30" y="224" width="354" height="23"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTe-Er-nJ9">
-                                <rect key="frame" x="30" y="252" width="354" height="1"/>
-                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="8dx-bo-zxg" customClass="Login">
+                                <rect key="frame" x="107" y="20" width="200" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="ZJO-CS-G8d"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22t-hp-J4G">
-                                <rect key="frame" x="30" y="302" width="354" height="1"/>
-                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="5q7-Dz-GW7"/>
-                                </constraints>
-                            </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTS-W9-bkO">
-                                <rect key="frame" x="30" y="273" width="354" height="24"/>
-                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-Ao-CzV">
-                                <rect key="frame" x="-677" y="64" width="1768" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="hUo-xt-DjI"/>
+                                    <constraint firstAttribute="height" constant="120" id="N1J-aa-Qj6"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hle-da-7jH">
+                                <rect key="frame" x="20" y="305.66666666666669" width="374" height="1"/>
+                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="vmc-W7-sYk"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyP-vk-nhE">
+                                <rect key="frame" x="132" y="356.66666666666669" width="150" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="18e-LK-n0k"/>
+                                    <constraint firstAttribute="width" constant="150" id="8xG-At-cQ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFMono-Semibold" family="SF Mono" pointSize="17"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="IQg-Ut-88D" eventType="touchUpInside" id="Toe-Zf-0uL"/>
+                                    <action selector="startHighlight:" destination="IQg-Ut-88D" eventType="touchDown" id="1qc-x5-O0m"/>
+                                    <action selector="startHighlight:" destination="IQg-Ut-88D" eventType="touchDragInside" id="WNq-VT-E6j"/>
+                                    <action selector="stopHighlight:" destination="IQg-Ut-88D" eventType="touchUpInside" id="RGz-fc-LcT"/>
+                                    <action selector="stopHighlight:" destination="IQg-Ut-88D" eventType="touchDragOutside" id="bE9-Pf-TVQ"/>
+                                    <action selector="stopHighlight:" destination="IQg-Ut-88D" eventType="touchUpOutside" id="map-Rb-LlE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doh-DV-IAc">
+                                <rect key="frame" x="134.66666666666666" y="668" width="144.99999999999997" height="28"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="13"/>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkInPressed:" destination="IQg-Ut-88D" eventType="touchUpInside" id="29T-3T-Jrs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если у вас еще нет аккаунта, вы можете" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKF-tQ-Zdl">
+                                <rect key="frame" x="54.333333333333343" y="652.33333333333337" width="305.66666666666663" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="13"/>
+                                <color key="textColor" red="0.70588916540000002" green="0.70587366819999997" blue="0.70587670800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Телефон" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3J9-kM-rId">
+                                <rect key="frame" x="20" y="276.66666666666669" width="374" height="24"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" textContentType="tel"/>
+                                <connections>
+                                    <action selector="doneTextField:" destination="IQg-Ut-88D" eventType="primaryActionTriggered" id="CW2-nd-TEq"/>
+                                    <action selector="textChanged:" destination="IQg-Ut-88D" eventType="editingChanged" id="lS5-xl-3le"/>
+                                </connections>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Код из смс" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NfQ-1A-UB9">
+                                <rect key="frame" x="114.33333333333333" y="280" width="185.66666666666669" height="36.666666666666686"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" textContentType="one-time-code"/>
+                                <connections>
+                                    <action selector="codeChanged:" destination="IQg-Ut-88D" eventType="editingChanged" id="p7d-fu-VLC"/>
+                                </connections>
+                            </textField>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lC-iU-hQl">
+                                <rect key="frame" x="132" y="321.66666666666669" width="150" height="1"/>
+                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Ut8-FO-nhF"/>
+                                    <constraint firstAttribute="width" constant="150" id="zzk-y4-LOu"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fgZ-QM-Hb5">
+                                <rect key="frame" x="188.66666666666666" y="339.66666666666669" width="37" height="37"/>
+                                <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.23137506839999999" green="0.23136925699999999" blue="0.2313703895" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите свой номер для отправки кода подтверждения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19W-QT-DO3">
+                                <rect key="frame" x="20" y="196" width="374" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="22t-hp-J4G" firstAttribute="top" secondItem="JTS-W9-bkO" secondAttribute="bottom" constant="5" id="1Qe-VM-IjY"/>
-                            <constraint firstItem="jjj-Bc-QSV" firstAttribute="top" secondItem="sa5-Ao-CzV" secondAttribute="bottom" constant="40" id="5uG-Gr-m1e"/>
-                            <constraint firstAttribute="trailing" secondItem="22t-hp-J4G" secondAttribute="trailing" constant="30" id="6cd-Ad-gYH"/>
-                            <constraint firstItem="JTS-W9-bkO" firstAttribute="leading" secondItem="aQq-Dx-gZv" secondAttribute="leading" constant="30" id="Iv0-6h-uDa"/>
-                            <constraint firstItem="sa5-Ao-CzV" firstAttribute="top" secondItem="aQq-Dx-gZv" secondAttribute="top" constant="20" id="LAh-si-8Aa"/>
-                            <constraint firstItem="jjj-Bc-QSV" firstAttribute="leading" secondItem="aQq-Dx-gZv" secondAttribute="leading" constant="30" id="MY6-wo-EBo"/>
-                            <constraint firstItem="jjj-Bc-QSV" firstAttribute="top" secondItem="sa5-Ao-CzV" secondAttribute="bottom" constant="40" id="QYa-B8-pfG"/>
-                            <constraint firstItem="ZTe-Er-nJ9" firstAttribute="leading" secondItem="xXV-Fp-KUG" secondAttribute="leading" constant="30" id="Sd2-Hy-3sU"/>
-                            <constraint firstAttribute="trailing" secondItem="ZTe-Er-nJ9" secondAttribute="trailing" constant="30" id="UIv-kk-pGA"/>
-                            <constraint firstItem="sa5-Ao-CzV" firstAttribute="centerX" secondItem="xXV-Fp-KUG" secondAttribute="centerX" id="bse-jW-BSp"/>
-                            <constraint firstItem="aQq-Dx-gZv" firstAttribute="trailing" secondItem="jjj-Bc-QSV" secondAttribute="trailing" constant="30" id="m4b-hj-e1p"/>
-                            <constraint firstItem="JTS-W9-bkO" firstAttribute="top" secondItem="ZTe-Er-nJ9" secondAttribute="bottom" constant="20" id="n8h-cQ-gQS"/>
-                            <constraint firstItem="22t-hp-J4G" firstAttribute="leading" secondItem="xXV-Fp-KUG" secondAttribute="leading" constant="30" id="ors-OZ-m2L"/>
-                            <constraint firstItem="ZTe-Er-nJ9" firstAttribute="top" secondItem="jjj-Bc-QSV" secondAttribute="bottom" constant="5" id="rcl-wT-cdU"/>
-                            <constraint firstItem="aQq-Dx-gZv" firstAttribute="trailing" secondItem="JTS-W9-bkO" secondAttribute="trailing" constant="30" id="zSH-LC-SHk"/>
+                            <constraint firstItem="doh-DV-IAc" firstAttribute="top" secondItem="FKF-tQ-Zdl" secondAttribute="bottom" id="0Pd-lv-Efd"/>
+                            <constraint firstItem="NfQ-1A-UB9" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="1qu-FM-df6"/>
+                            <constraint firstItem="hle-da-7jH" firstAttribute="leading" secondItem="N8R-nH-tcO" secondAttribute="leading" constant="20" id="2ZN-Px-a5P"/>
+                            <constraint firstItem="19W-QT-DO3" firstAttribute="top" secondItem="8dx-bo-zxg" secondAttribute="bottom" constant="56" id="3QW-tV-jwf"/>
+                            <constraint firstItem="J56-SW-x43" firstAttribute="bottom" secondItem="doh-DV-IAc" secondAttribute="bottom" constant="20" id="69P-y4-In9"/>
+                            <constraint firstItem="fgZ-QM-Hb5" firstAttribute="centerY" secondItem="N8R-nH-tcO" secondAttribute="centerY" id="840-vB-5MC"/>
+                            <constraint firstItem="doh-DV-IAc" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="CrT-XJ-pU3"/>
+                            <constraint firstItem="fgZ-QM-Hb5" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="HwD-hi-2We"/>
+                            <constraint firstItem="J56-SW-x43" firstAttribute="trailing" secondItem="19W-QT-DO3" secondAttribute="trailing" constant="20" id="O04-rZ-7zP"/>
+                            <constraint firstItem="19W-QT-DO3" firstAttribute="leading" secondItem="J56-SW-x43" secondAttribute="leading" constant="20" id="R4s-vS-3bs"/>
+                            <constraint firstItem="8dx-bo-zxg" firstAttribute="top" secondItem="J56-SW-x43" secondAttribute="top" constant="20" id="S6k-Ii-pe4"/>
+                            <constraint firstItem="GyP-vk-nhE" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="URO-PZ-zps"/>
+                            <constraint firstItem="3J9-kM-rId" firstAttribute="leading" secondItem="J56-SW-x43" secondAttribute="leading" constant="20" id="Za0-Om-mWt"/>
+                            <constraint firstItem="J56-SW-x43" firstAttribute="trailing" secondItem="3J9-kM-rId" secondAttribute="trailing" constant="20" id="bgD-kF-TDR"/>
+                            <constraint firstAttribute="trailing" secondItem="hle-da-7jH" secondAttribute="trailing" constant="20" id="bnh-TM-cae"/>
+                            <constraint firstItem="NfQ-1A-UB9" firstAttribute="top" secondItem="8dx-bo-zxg" secondAttribute="bottom" constant="140" id="fgk-oN-kOu"/>
+                            <constraint firstItem="hle-da-7jH" firstAttribute="top" secondItem="3J9-kM-rId" secondAttribute="bottom" constant="5" id="iPY-tq-nCE"/>
+                            <constraint firstItem="3J9-kM-rId" firstAttribute="top" secondItem="19W-QT-DO3" secondAttribute="bottom" constant="40" id="pXu-2B-gGZ"/>
+                            <constraint firstItem="0lC-iU-hQl" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="qJk-f2-Z5O"/>
+                            <constraint firstItem="FKF-tQ-Zdl" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="t93-lY-ci7"/>
+                            <constraint firstItem="GyP-vk-nhE" firstAttribute="top" secondItem="hle-da-7jH" secondAttribute="bottom" constant="50" id="w4d-Wx-MX8"/>
+                            <constraint firstItem="8dx-bo-zxg" firstAttribute="centerX" secondItem="N8R-nH-tcO" secondAttribute="centerX" id="yZ1-2U-bwe"/>
+                            <constraint firstItem="0lC-iU-hQl" firstAttribute="top" secondItem="NfQ-1A-UB9" secondAttribute="bottom" constant="5" id="zRX-fp-RSF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aQq-Dx-gZv"/>
+                        <viewLayoutGuide key="safeArea" id="J56-SW-x43"/>
                     </view>
+                    <navigationItem key="navigationItem" id="04g-6T-1bf"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="NfQ-1A-UB9" id="l3n-4o-5HA"/>
+                        <outlet property="loginButton" destination="GyP-vk-nhE" id="Hn5-Ri-6xz"/>
+                        <outlet property="phoneNumberTextField" destination="3J9-kM-rId" id="OEK-gC-jnp"/>
+                        <outlet property="progressIndicator" destination="fgZ-QM-Hb5" id="Kdu-U1-uPi"/>
+                        <outlet property="titleLabel" destination="19W-QT-DO3" id="95b-Xw-YUP"/>
+                        <outlet property="viewButtom" destination="0lC-iU-hQl" id="jnt-LG-WiA"/>
+                        <outlet property="viewTop" destination="hle-da-7jH" id="xWw-Th-cfl"/>
+                        <segue destination="NRn-WM-rtQ" kind="presentation" identifier="toCheckImFromLogin" id="Lcs-lm-6hL"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fwy-5t-QUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="3Vb-sT-Dsj">
+                    <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="color" red="0.53606760499999995" green="0.38876450060000001" blue="0.33723908660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </activityIndicatorView>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcP-fe-wPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2738" y="457"/>
+            <point key="canvasLocation" x="1680" y="1974"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BH5-7Y-vBs">
             <objects>
-                <tabBarController id="uoH-aO-njV" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uoH-aO-njV" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oho-im-vbu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -646,15 +1221,177 @@
             </objects>
             <point key="canvasLocation" x="-1635" y="457"/>
         </scene>
+        <!--Check In View Controller-->
+        <scene sceneID="jmF-AX-dlE">
+            <objects>
+                <viewController storyboardIdentifier="CheckInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NRn-WM-rtQ" customClass="CheckInViewController" customModule="Wild_Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5X4-fB-g3b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wild coffee" translatesAutoresizingMaskIntoConstraints="NO" id="Y1o-81-wfK">
+                                <rect key="frame" x="107" y="20" width="200" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="REw-wl-mzS"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Имя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bq0-8m-28d">
+                                <rect key="frame" x="20" y="260.66666666666669" width="374" height="22"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                                <connections>
+                                    <action selector="donePressedName:" destination="NRn-WM-rtQ" eventType="primaryActionTriggered" id="UMe-M2-gmY"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Maj-3p-nGC">
+                                <rect key="frame" x="20" y="287.66666666666669" width="374" height="1"/>
+                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Cv8-ka-fpU"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Телефон" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZ1-KG-rPc">
+                                <rect key="frame" x="20" y="328.66666666666669" width="374" height="22"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" textContentType="tel"/>
+                                <connections>
+                                    <action selector="donePressedPhone:" destination="NRn-WM-rtQ" eventType="primaryActionTriggered" id="Zqw-Eb-PFy"/>
+                                    <action selector="phoneChangedTextField:" destination="NRn-WM-rtQ" eventType="editingChanged" id="rqu-bH-VqK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rME-yq-VBd">
+                                <rect key="frame" x="87" y="406.66666666666669" width="240" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4oA-W0-sgz"/>
+                                    <constraint firstAttribute="width" constant="240" id="lHM-Y5-Nq3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFMono-Semibold" family="SF Mono" pointSize="17"/>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCodePressed:" destination="NRn-WM-rtQ" eventType="touchUpInside" id="gQz-fQ-u8y"/>
+                                    <action selector="startHighlight:" destination="NRn-WM-rtQ" eventType="touchDragInside" id="l19-mH-yGx"/>
+                                    <action selector="startHighlight:" destination="NRn-WM-rtQ" eventType="touchDown" id="xrR-bK-GZg"/>
+                                    <action selector="stopHighlight:" destination="NRn-WM-rtQ" eventType="touchDragOutside" id="B7J-8g-Dhy"/>
+                                    <action selector="stopHighlight:" destination="NRn-WM-rtQ" eventType="touchUpOutside" id="H5Y-ak-4On"/>
+                                    <action selector="stopHighlight:" destination="NRn-WM-rtQ" eventType="touchUpInside" id="tbq-xn-ebJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbS-zz-OrX">
+                                <rect key="frame" x="186.66666666666666" y="668" width="41" height="28"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="13"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toLoginButtonPressed:" destination="NRn-WM-rtQ" eventType="touchUpInside" id="aNZ-Db-c8e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если у вас уже есть аккаунт, вы можете" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oj-WI-xGJ">
+                                <rect key="frame" x="54.333333333333343" y="652.33333333333337" width="305.66666666666663" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="13"/>
+                                <color key="textColor" red="0.70588916540000002" green="0.70587366819999997" blue="0.70587670800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEY-Hv-mKS">
+                                <rect key="frame" x="20" y="355.66666666666669" width="374" height="1"/>
+                                <color key="backgroundColor" red="0.88248312470000001" green="0.8940640688" blue="0.89803296330000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="p76-ka-MRF"/>
+                                </constraints>
+                            </view>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Код из смс" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-9J-f9H">
+                                <rect key="frame" x="114.33333333333333" y="280" width="185.66666666666669" height="36.666666666666686"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" textContentType="one-time-code"/>
+                                <connections>
+                                    <action selector="codeChangeTextField:" destination="NRn-WM-rtQ" eventType="editingChanged" id="wAZ-3w-RbK"/>
+                                </connections>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-mU-mWf">
+                                <rect key="frame" x="188.66666666666666" y="339.66666666666669" width="37" height="37"/>
+                                <color key="tintColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.23137506839999999" green="0.23136925699999999" blue="0.2313703895" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для использования приложения необходимо зарегистрироваться" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0S-ug-fhL">
+                                <rect key="frame" x="20" y="180" width="374" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g0S-ug-fhL" firstAttribute="top" secondItem="Y1o-81-wfK" secondAttribute="bottom" constant="40" id="1wR-nP-mdH"/>
+                            <constraint firstItem="loO-mE-yLC" firstAttribute="bottom" secondItem="WbS-zz-OrX" secondAttribute="bottom" constant="20" id="2kE-Rd-iJa"/>
+                            <constraint firstItem="WbS-zz-OrX" firstAttribute="top" secondItem="0oj-WI-xGJ" secondAttribute="bottom" id="DSO-jx-Dbb"/>
+                            <constraint firstItem="wEY-Hv-mKS" firstAttribute="leading" secondItem="5X4-fB-g3b" secondAttribute="leadingMargin" id="H0L-Ep-kDW"/>
+                            <constraint firstItem="wEY-Hv-mKS" firstAttribute="trailing" secondItem="5X4-fB-g3b" secondAttribute="trailingMargin" id="H6m-0R-soS"/>
+                            <constraint firstItem="Maj-3p-nGC" firstAttribute="leading" secondItem="5X4-fB-g3b" secondAttribute="leading" constant="20" id="Jks-rb-YaD"/>
+                            <constraint firstItem="Bq0-8m-28d" firstAttribute="leading" secondItem="loO-mE-yLC" secondAttribute="leading" constant="20" id="KG1-Ja-pw0"/>
+                            <constraint firstItem="gZw-9J-f9H" firstAttribute="centerX" secondItem="5X4-fB-g3b" secondAttribute="centerX" id="LtI-Xt-QMn"/>
+                            <constraint firstItem="CZ1-KG-rPc" firstAttribute="leading" secondItem="loO-mE-yLC" secondAttribute="leading" constant="20" id="NMa-iR-5AV"/>
+                            <constraint firstItem="WbS-zz-OrX" firstAttribute="centerX" secondItem="5X4-fB-g3b" secondAttribute="centerX" id="OLk-vq-ksG"/>
+                            <constraint firstItem="Maj-3p-nGC" firstAttribute="top" secondItem="Bq0-8m-28d" secondAttribute="bottom" constant="5" id="PI5-Ts-eyx"/>
+                            <constraint firstItem="rME-yq-VBd" firstAttribute="top" secondItem="wEY-Hv-mKS" secondAttribute="bottom" constant="50" id="QqB-es-HNT"/>
+                            <constraint firstItem="loO-mE-yLC" firstAttribute="trailing" secondItem="g0S-ug-fhL" secondAttribute="trailing" constant="20" id="Sw9-gy-Xb8"/>
+                            <constraint firstItem="tjZ-mU-mWf" firstAttribute="centerX" secondItem="5X4-fB-g3b" secondAttribute="centerX" id="TE3-5s-mde"/>
+                            <constraint firstItem="tjZ-mU-mWf" firstAttribute="centerY" secondItem="5X4-fB-g3b" secondAttribute="centerY" id="U2g-Pp-vww"/>
+                            <constraint firstItem="0oj-WI-xGJ" firstAttribute="centerX" secondItem="5X4-fB-g3b" secondAttribute="centerX" id="Zfi-tY-HHQ"/>
+                            <constraint firstItem="rME-yq-VBd" firstAttribute="centerX" secondItem="5X4-fB-g3b" secondAttribute="centerX" id="faS-Aw-CmK"/>
+                            <constraint firstItem="loO-mE-yLC" firstAttribute="trailing" secondItem="Bq0-8m-28d" secondAttribute="trailing" constant="20" id="g7c-QV-vbl"/>
+                            <constraint firstAttribute="trailing" secondItem="Maj-3p-nGC" secondAttribute="trailing" constant="20" id="gJE-FA-BWw"/>
+                            <constraint firstItem="wEY-Hv-mKS" firstAttribute="top" secondItem="CZ1-KG-rPc" secondAttribute="bottom" constant="5" id="gff-E0-Gwh"/>
+                            <constraint firstItem="Y1o-81-wfK" firstAttribute="centerX" secondItem="5X4-fB-g3b" secondAttribute="centerX" id="m3S-uh-Cut"/>
+                            <constraint firstItem="g0S-ug-fhL" firstAttribute="leading" secondItem="loO-mE-yLC" secondAttribute="leading" constant="20" id="obj-VI-aTb"/>
+                            <constraint firstItem="Y1o-81-wfK" firstAttribute="top" secondItem="loO-mE-yLC" secondAttribute="top" constant="20" id="puF-eI-wDQ"/>
+                            <constraint firstItem="gZw-9J-f9H" firstAttribute="top" secondItem="Y1o-81-wfK" secondAttribute="bottom" constant="140" id="rYW-5g-wcr"/>
+                            <constraint firstItem="loO-mE-yLC" firstAttribute="trailing" secondItem="CZ1-KG-rPc" secondAttribute="trailing" constant="20" id="uDQ-FY-WY9"/>
+                            <constraint firstItem="CZ1-KG-rPc" firstAttribute="top" secondItem="Maj-3p-nGC" secondAttribute="bottom" constant="40" id="vCR-B6-96j"/>
+                            <constraint firstItem="Bq0-8m-28d" firstAttribute="top" secondItem="g0S-ug-fhL" secondAttribute="bottom" constant="40" id="wiE-pM-LI1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="loO-mE-yLC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9FR-SV-196"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="gZw-9J-f9H" id="YxO-fU-Kbm"/>
+                        <outlet property="getCodeButton" destination="rME-yq-VBd" id="Jsa-EP-G9T"/>
+                        <outlet property="nameTextField" destination="Bq0-8m-28d" id="Gw3-ec-hbC"/>
+                        <outlet property="phoneNumberTextField" destination="CZ1-KG-rPc" id="df0-o8-bEl"/>
+                        <outlet property="progressIndicator" destination="tjZ-mU-mWf" id="2lB-dw-60M"/>
+                        <outlet property="titleLabel" destination="g0S-ug-fhL" id="TkX-X6-ILV"/>
+                        <outlet property="viewButtom" destination="wEY-Hv-mKS" id="tZA-73-zl8"/>
+                        <outlet property="viewTop" destination="Maj-3p-nGC" id="gQy-uR-aHt"/>
+                        <segue destination="IQg-Ut-88D" kind="presentation" identifier="toLoginFromCheckin" id="hhS-P4-ThV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54L-hz-39a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="1975"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="aku-Da-wYR"/>
+        <segue reference="dNp-1R-bOJ"/>
         <segue reference="Lhi-XK-sCb"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Wild coffee" width="1768" height="1640.5"/>
+        <image name="Wild coffee" width="200" height="200"/>
         <image name="bag" width="32" height="32"/>
         <image name="cafe" width="28" height="28"/>
+        <image name="call" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="check-mark" width="250" height="250"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="inst_logo" width="170.66667175292969" height="170.66667175292969"/>
         <image name="user" width="28" height="28"/>
     </resources>
 </document>

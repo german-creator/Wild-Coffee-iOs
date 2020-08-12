@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Wild coffee.png",
+      "filename" : "whitecup.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Wild coffee@2x.png",
+      "filename" : "whitecup-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Wild coffee@3x.png",
+      "filename" : "whitecup-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

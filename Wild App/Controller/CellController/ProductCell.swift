@@ -16,7 +16,6 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var imageForProduct: UIImageView!
     
     
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

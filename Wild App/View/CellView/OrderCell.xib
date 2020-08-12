@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -24,41 +24,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="500" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Латте" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBg-dq-nMX">
-                        <rect key="frame" x="130" y="10" width="56" height="21.5"/>
-                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="18"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Латте" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBg-dq-nMX">
+                        <rect key="frame" x="140" y="8" width="340" height="20.5"/>
+                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
+                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="170 Р" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKh-vb-SWs">
-                        <rect key="frame" x="408.5" y="72.5" width="71.5" height="27.5"/>
-                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="23"/>
+                        <rect key="frame" x="421" y="87" width="59" height="23"/>
+                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="19"/>
                         <color key="textColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flat" translatesAutoresizingMaskIntoConstraints="NO" id="ARr-RL-4lB">
-                        <rect key="frame" x="20" y="15" width="90" height="90"/>
+                        <rect key="frame" x="20" y="10" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="90" id="nkh-gc-QR0"/>
-                            <constraint firstAttribute="width" constant="90" id="oOL-AF-WHB"/>
+                            <constraint firstAttribute="height" constant="100" id="nkh-gc-QR0"/>
+                            <constraint firstAttribute="width" constant="100" id="oOL-AF-WHB"/>
                         </constraints>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vi-cD-DZt">
-                        <rect key="frame" x="130" y="35.5" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="14"/>
+                        <rect key="frame" x="140" y="32.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="13"/>
                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-Uy-4ax">
-                        <rect key="frame" x="130" y="35.5" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="14"/>
+                        <rect key="frame" x="140" y="32.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="13"/>
                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhh-ad-zxG">
-                        <rect key="frame" x="130" y="35.5" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="14"/>
+                        <rect key="frame" x="140" y="32.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="13"/>
+                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtP-tm-ExJ">
+                        <rect key="frame" x="140" y="32.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="13"/>
                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -69,21 +75,16 @@
                             <constraint firstAttribute="height" constant="1" id="hBy-kz-1pg"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOa-1h-DfN">
-                        <rect key="frame" x="396.5" y="100" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="23"/>
-                        <color key="textColor" red="0.3803921569" green="0.90980392160000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtP-tm-ExJ">
-                        <rect key="frame" x="130" y="35.5" width="0.0" height="0.0"/>
-                        <fontDescription key="fontDescription" name="SFMono-Light" family="SF Mono" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2х" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOa-1h-DfN">
+                        <rect key="frame" x="458.5" y="28.5" width="21.5" height="20.5"/>
+                        <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="17"/>
                         <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vtP-tm-ExJ" firstAttribute="leading" secondItem="ARr-RL-4lB" secondAttribute="trailing" constant="20" id="267-vx-g24"/>
+                    <constraint firstItem="fOa-1h-DfN" firstAttribute="top" secondItem="PBg-dq-nMX" secondAttribute="bottom" id="3r1-TW-QyK"/>
                     <constraint firstItem="fT0-Uy-4ax" firstAttribute="leading" secondItem="ARr-RL-4lB" secondAttribute="trailing" constant="20" id="4ez-Vr-yFK"/>
                     <constraint firstItem="fT0-Uy-4ax" firstAttribute="top" secondItem="6Vi-cD-DZt" secondAttribute="bottom" id="6i2-Fs-ixO"/>
                     <constraint firstAttribute="bottom" secondItem="fhY-dr-pK2" secondAttribute="bottom" id="AiX-BR-Kti"/>
@@ -92,15 +93,15 @@
                     <constraint firstItem="ARr-RL-4lB" firstAttribute="leading" secondItem="8Q6-K1-q3Q" secondAttribute="leading" constant="20" id="HGe-aX-HZG"/>
                     <constraint firstItem="Lhh-ad-zxG" firstAttribute="leading" secondItem="ARr-RL-4lB" secondAttribute="trailing" constant="20" id="HUf-2D-2GA"/>
                     <constraint firstItem="Lhh-ad-zxG" firstAttribute="top" secondItem="vtP-tm-ExJ" secondAttribute="bottom" id="LcJ-Y4-b7g"/>
+                    <constraint firstAttribute="trailing" secondItem="PBg-dq-nMX" secondAttribute="trailing" constant="20" id="NBa-fk-FOe"/>
                     <constraint firstAttribute="trailing" secondItem="fhY-dr-pK2" secondAttribute="trailing" constant="20" id="Q0i-xr-XWx"/>
                     <constraint firstAttribute="trailing" secondItem="HKh-vb-SWs" secondAttribute="trailing" constant="20" id="R4a-WM-18O"/>
-                    <constraint firstAttribute="bottom" secondItem="HKh-vb-SWs" secondAttribute="bottom" constant="20" id="WFb-rA-qcK"/>
+                    <constraint firstAttribute="bottom" secondItem="HKh-vb-SWs" secondAttribute="bottom" constant="10" id="WFb-rA-qcK"/>
                     <constraint firstItem="6Vi-cD-DZt" firstAttribute="top" secondItem="PBg-dq-nMX" secondAttribute="bottom" constant="4" id="avy-jh-WBd"/>
                     <constraint firstItem="PBg-dq-nMX" firstAttribute="leading" secondItem="ARr-RL-4lB" secondAttribute="trailing" constant="20" id="el6-NI-vag"/>
-                    <constraint firstItem="PBg-dq-nMX" firstAttribute="top" secondItem="8Q6-K1-q3Q" secondAttribute="top" constant="10" id="gk7-xx-hQs"/>
-                    <constraint firstItem="fhY-dr-pK2" firstAttribute="top" secondItem="fOa-1h-DfN" secondAttribute="bottom" constant="19" id="i39-fB-NKb"/>
+                    <constraint firstItem="PBg-dq-nMX" firstAttribute="top" secondItem="8Q6-K1-q3Q" secondAttribute="top" constant="8" id="gk7-xx-hQs"/>
+                    <constraint firstAttribute="trailing" secondItem="fOa-1h-DfN" secondAttribute="trailing" constant="20" id="j35-ws-Q1y"/>
                     <constraint firstItem="6Vi-cD-DZt" firstAttribute="leading" secondItem="ARr-RL-4lB" secondAttribute="trailing" constant="20" id="lPC-si-q7r"/>
-                    <constraint firstItem="HKh-vb-SWs" firstAttribute="leading" secondItem="fOa-1h-DfN" secondAttribute="trailing" constant="12" id="zeU-Lu-rNJ"/>
                     <constraint firstItem="vtP-tm-ExJ" firstAttribute="top" secondItem="fT0-Uy-4ax" secondAttribute="bottom" id="zpd-T1-K26"/>
                 </constraints>
             </tableViewCellContentView>

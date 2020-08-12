@@ -15,10 +15,10 @@ class MenuViewController: UIViewController, UpdateTabBar {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
     var group = Group(name: "1", avalible: true)
-    //    var product = Product()
     
     var storage: Storage?
     var groupStorageRef: StorageReference?
@@ -29,13 +29,27 @@ class MenuViewController: UIViewController, UpdateTabBar {
     
     var numberSelected = 0
     
+    var oldContentOffset: CGFloat = 0
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+
+        progressIndicator.startAnimating()
+        //        WorkWithDatabase.addProductToDatabase()
         
-        //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
-        //        self.present(vc, animated: true, completion: nil)
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+
+        if launchedBefore {} else {
+            performSegue(withIdentifier: "toRegistrationFromMenu", sender: self)
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
+        
+        if !Reachability.isConnectedToNetwork(){
+            showErrod(error: "Для работы приложения необходимо подключение к интернету, пожалуйста подключитесь к сети")
+        }
         
     }
     
@@ -44,8 +58,7 @@ class MenuViewController: UIViewController, UpdateTabBar {
         
         storage = Storage.storage()
         
-        self.tableView.rowHeight = 220
-        
+        self.tableView.rowHeight = 250
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -56,15 +69,27 @@ class MenuViewController: UIViewController, UpdateTabBar {
         collectionView.register(UINib(nibName: "TableMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TableMenuCollectionViewCell")
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductReusableCell")
         
-        //        avalibleProductList = Service.sharedInstance.createClassicProduct()
-        
         //        WorkWithDatabase.addProductToDatabase()
         
-        WorkWithDatabase.getAllAvalibleGroup { group in
-            self.avalibleGroupList.append(contentsOf: group)
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        
+//        if !Reachability.isConnectedToNetwork(){
+//            print ("")
+//            showErrod(error: "Для работы приложения необходимо подключение к интернету, пожалуйста подключитесь к сети")
+//        }
+
+        
+        
+        WorkWithDatabase.getAllAvalibleGroup { group, error  in
+            
+            if group != nil{
+                self.avalibleGroupList.append(contentsOf: group!)
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            } else {
+                self.showErrod(error: error!.localizedDescription)
             }
+            
         }
         
         WorkWithDatabase.getAllAvalibleProduct { (products) in
@@ -72,23 +97,38 @@ class MenuViewController: UIViewController, UpdateTabBar {
             self.productInGroup = self.avalibleProductList.filter{$0.group == self.avalibleGroupList[self.numberSelected].name}
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.progressIndicator.isHidden = true
+                
             }
         }
-        
     }
-    
-    
     
     func updateSecondItemBadge(count: String) {
         tabBarController?.tabBar.items?[1].badgeValue = count
+    }
+    
+    func showErrod(error: String) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        
+        let titleFont = [NSAttributedString.Key.font: UIFont(name: "SFMono-Regular", size: 17.0)!]
+        let titleAttrString = NSMutableAttributedString(string: error, attributes: titleFont)
+        
+        alert.setValue(titleAttrString, forKey: "attributedMessage")
+        alert.view.tintColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+        
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         
     }
+    
 }
 
 
 //MARK: -TableViewExtension
 
-extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
+extension MenuViewController: UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         productInGroup.count
     }
@@ -100,9 +140,9 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.label!.text = productInGroup[indexPath.row].name
         cell.subLabel!.text = productInGroup[indexPath.row].description
-            
+        
         Nuke.loadImage(with: URL(string: productInGroup[indexPath.row].imageUrl)!, into: cell.imageForProduct)
-
+        
         return cell
     }
     
@@ -126,7 +166,38 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
                 destinationVC.product = self.productInGroup[indexPath.row]
             }
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        
+        if scrollView == tableView {
+            
+            let contentOffset =  scrollView.contentOffset.y - oldContentOffset
+            
+            
+            // Scrolls UP - we compress the top view
+            if contentOffset > 0 && scrollView.contentOffset.y > 0 {
+                if (imageViewTopConstraint.constant - contentOffset) > -123  {
+                    imageViewTopConstraint.constant -= contentOffset
+                    scrollView.contentOffset.y -= contentOffset
+                }
+            }
+            
+            // Scrolls Down - we expand the top view
+            if contentOffset < 0 && scrollView.contentOffset.y < 0 {
+                if (imageViewTopConstraint.constant < 10) {
+                    if imageViewTopConstraint.constant - contentOffset > 10 {
+                        imageViewTopConstraint.constant = 10
+                    } else {
+                        imageViewTopConstraint.constant -= contentOffset
+                    }
+                    scrollView.contentOffset.y -= contentOffset
+                }
+            }
+            oldContentOffset = scrollView.contentOffset.y
+            
+        }
     }
     
 }
@@ -146,9 +217,13 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TableMenuCollectionViewCell", for: indexPath) as! TableMenuCollectionViewCell
         
         if numberSelected == indexPath.row {
-            cell.groupName?.textColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+            cell.groupName?.textColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
+            cell.backView.backgroundColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+            
         } else {
             cell.groupName?.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+            cell.backView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
         }
         
         
@@ -167,11 +242,9 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.collectionView.reloadDataWithoutScroll()
         
         self.tableView.reloadData()
-    }
-    
-    func updateTableView (groupName : String) {
         
     }
+    
 }
 
 
