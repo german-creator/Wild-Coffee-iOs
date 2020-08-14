@@ -92,6 +92,14 @@ class CardViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func startHighlight(_ sender: UIButton) {
+        buttonAdd.layer.borderColor = #colorLiteral(red: 0.3817316294, green: 0.9095525146, blue: 0.8818981051, alpha: 0.2044360017)
+    }
+
+    @IBAction func stopHighlight(_ sender: UIButton) {
+        buttonAdd.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+    }
+    
     func basketMode() {
         
         selectedAdd = productInBasket?.selectedAdd as! [Int : Int]

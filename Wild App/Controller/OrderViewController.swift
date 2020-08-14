@@ -12,7 +12,7 @@ import Nuke
 
 class OrderViewController: UIViewController, UpdateTabBar {
     
-    var timeArray: [String] = ["5 минут", "10 минут", "15 минут", "20 минут", "25 минут", "30 минут"]
+    var timeArray: [String] = ["", "5 минут", "10 минут", "15 минут", "20 минут", "25 минут", "30 минут"]
     var basketList: [ProductInBasket] = []
     
     @IBOutlet weak var topLabel1: UILabel!
@@ -107,6 +107,9 @@ class OrderViewController: UIViewController, UpdateTabBar {
     
     
     @IBAction func clickOrderButton(_ sender: UIButton) {
+        
+        commentTextField.resignFirstResponder()
+        inputDateTextField.resignFirstResponder()
         
         if !FirebaseAuthentication.checkUserLogin(){
             showErrod(error: "Для заказа напитков необходимо зарегестрироваться")
@@ -319,4 +322,5 @@ extension OrderViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         inputDateTextField.text = timeArray[row]
         view.endEditing(false)
     }
+    
 }

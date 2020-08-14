@@ -26,7 +26,7 @@ class CheckInViewController: UIViewController {
         
         getCodeButton.layer.cornerRadius = 15
         getCodeButton.layer.borderWidth = 2
-        getCodeButton.layer.borderColor = #colorLiteral(red: 0.4348584116, green: 0.920769155, blue: 0.9059947133, alpha: 1)
+        getCodeButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.9450980392, blue: 0.8862745098, alpha: 1)
         
     }
     
@@ -100,6 +100,7 @@ class CheckInViewController: UIViewController {
     
     @IBAction func phoneChangedTextField(_ sender: UITextField) {
         
+        
         if (sender.text!.count > 14) {
             sender.deleteBackward()
         } else{
@@ -117,7 +118,7 @@ class CheckInViewController: UIViewController {
         }
         
         if sender.text!.count == 6{
-            
+        
             
             let credential = PhoneAuthProvider.provider().credential(
                 withVerificationID: verificationID!,
