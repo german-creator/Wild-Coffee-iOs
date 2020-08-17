@@ -1,7 +1,6 @@
 import UIKit
 import AnyFormatKit
 import Firebase
-import JHTAlertController
 
 class CheckInViewController: UIViewController {
     

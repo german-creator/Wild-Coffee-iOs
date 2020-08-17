@@ -102,7 +102,7 @@ class CardViewController: UIViewController, UITextFieldDelegate {
     
     func basketMode() {
         
-        selectedAdd = productInBasket?.selectedAdd as! [Int : Int]
+        selectedAdd = productInBasket!.selectedAdd
         count = productInBasket!.count
         cost = productInBasket!.cost * count
         

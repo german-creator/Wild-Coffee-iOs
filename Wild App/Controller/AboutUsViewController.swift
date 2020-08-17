@@ -32,9 +32,9 @@ class AboutUsViewController: UIViewController {
         let instagramHooks = "https://www.instagram.com/wild_coffee_/"
         let instagramUrl = NSURL(string: instagramHooks)
         if UIApplication.shared.canOpenURL(instagramUrl! as URL) {
-            UIApplication.shared.openURL(instagramUrl! as URL)
+            UIApplication.shared.open(instagramUrl! as URL, options: [:], completionHandler: nil)
         } else {
-            UIApplication.shared.openURL(NSURL(string: "https://www.instagram.com/wild_coffee_/")! as URL)
+            UIApplication.shared.open(NSURL(string: "https://www.instagram.com/wild_coffee_/")! as URL, options: [:], completionHandler: nil)
         }
     }
     

@@ -40,8 +40,8 @@ class Product {
         self.group = snapshotValue["group"] as! String
         self.name = snapshotValue["name"] as! String
         self.description = snapshotValue["description"] as! String
-        self.cost = Int(snapshotValue["cost"] as! NSNumber)
-        self.volume = Int(snapshotValue["volume"] as! NSNumber)
+        self.cost = Int(truncating: snapshotValue["cost"] as! NSNumber)
+        self.volume = Int(truncating: snapshotValue["volume"] as! NSNumber)
         
         
         var add: [Add] = []
