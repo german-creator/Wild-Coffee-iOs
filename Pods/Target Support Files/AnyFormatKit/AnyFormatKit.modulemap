@@ -1,0 +1,6 @@
+module AnyFormatKit {
+  umbrella header "AnyFormatKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

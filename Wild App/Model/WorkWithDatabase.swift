@@ -115,6 +115,7 @@ struct WorkWithDatabase {
                                       add1 ?? "",
                                       add2 ?? "",
                                       add3 ?? "",
+                                      String(i.count) + " шт",
                                       "\n"]
             
             

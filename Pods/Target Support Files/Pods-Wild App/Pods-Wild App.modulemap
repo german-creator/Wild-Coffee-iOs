@@ -1,0 +1,6 @@
+module Pods_Wild_App {
+  umbrella header "Pods-Wild App-umbrella.h"
+
+  export *
+  module * { export * }
+}

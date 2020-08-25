@@ -183,22 +183,18 @@ class CardViewController: UIViewController, UITextFieldDelegate {
             for i in 0...productInBasket!.add.count-1 {
                 if (productInBasket!.add[i].costOption.count != 0){
                     a += productInBasket!.add[i].costOption[selectedAdd[i]!] * count
-                    cost = count*productInBasket!.cost + a
-                    
                 }
+                cost = count*productInBasket!.cost + a
             }
         } else {
             for i in 0...product!.add.count-1 {
                 if (product!.add[i].costOption.count != 0){
                     a += product!.add[i].costOption[selectedAdd[i]!] * count
-                    cost = count*product!.cost + a
-                    
                 }
+                cost = count*product!.cost + a
+
             }
         }
-        
-        
-        
         
         buttonAdd.setTitle(String(cost) + " ₽", for: .normal)
     }
