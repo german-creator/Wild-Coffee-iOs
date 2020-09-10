@@ -36,7 +36,6 @@ class Product {
         
         let snapshotValue = snapshot.value as! [String: Any]
         
-        
         self.group = snapshotValue["group"] as! String
         self.name = snapshotValue["name"] as! String
         self.description = snapshotValue["description"] as! String

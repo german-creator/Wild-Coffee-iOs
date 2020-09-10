@@ -66,6 +66,7 @@ class CheckInViewController: UIViewController {
                         self.phoneNumberTextField.isHidden = true
                         self.titleLabel.isHidden = true
                         
+                        Auth.auth().languageCode = "ru";
                         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
                             if let error = error {
                                 
@@ -77,19 +78,19 @@ class CheckInViewController: UIViewController {
                                 self.progressIndicator.isHidden = true
                                 self.titleLabel.isHidden = false
                                 
-                                
                                 self.showErrod(error: error.localizedDescription)
                                 return
                             }
-                            
+                                                        
                             self.verificationID = verificationID
-                            
                             self.codeTextField.isHidden = false
                             
                             self.codeTextField.becomeFirstResponder()
                             self.progressIndicator.isHidden = true
                             
                         }
+                        
+                        
                     }
                 }
             }
@@ -117,7 +118,6 @@ class CheckInViewController: UIViewController {
         }
         
         if sender.text!.count == 6{
-        
             
             let credential = PhoneAuthProvider.provider().credential(
                 withVerificationID: verificationID!,

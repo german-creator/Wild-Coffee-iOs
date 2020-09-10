@@ -37,7 +37,7 @@ class MenuViewController: UIViewController, UpdateTabBar {
         
 
         progressIndicator.startAnimating()
-        //        WorkWithDatabase.addProductToDatabase()
+//        WorkWithDatabase.addSyropToDatabase()
         
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
@@ -69,15 +69,6 @@ class MenuViewController: UIViewController, UpdateTabBar {
         collectionView.register(UINib(nibName: "TableMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TableMenuCollectionViewCell")
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductReusableCell")
         
-        //        WorkWithDatabase.addProductToDatabase()
-        
-        
-//        if !Reachability.isConnectedToNetwork(){
-//            print ("")
-//            showErrod(error: "Для работы приложения необходимо подключение к интернету, пожалуйста подключитесь к сети")
-//        }
-
-        
         
         WorkWithDatabase.getAllAvalibleGroup { group, error  in
             
@@ -98,7 +89,7 @@ class MenuViewController: UIViewController, UpdateTabBar {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.progressIndicator.isHidden = true
-                
+        
             }
         }
     }

@@ -478,9 +478,330 @@ struct WorkWithDatabase {
         
         Service.sharedInstance.ref.child("Products").childByAutoId().setValue(citrus)
         
+    }
+    
+    static func addAlternativeProductToDatabase () {
+        
+        let сhemex = [ "group": "Альтернатива",
+                       "name": "Кемекс",
+                       "description": "Альтернативный способ заваривания кофе с мягким и чистым вкусом",
+                       "cost": 170,
+                       "volume": 300,
+                       "addName" : ["С собой"],
+                       "addOption0" : ["Да", "Нет"],
+                       "addCostOption0" : [],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%B0%2F%D0%9A%D0%B5%D0%BC%D0%B5%D0%BA%D1%81.png?alt=media&token=7cd7914c-81dd-401c-893a-1200c3bc3b57"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(сhemex)
+        
+        let voronka = [ "group": "Альтернатива",
+                       "name": "Пуровер",
+                       "description": "Метод заваривания фильтра с насыщенныи и всегда разным вкусом",
+                       "cost": 170,
+                       "volume": 300,
+                       "addName" : ["С собой"],
+                       "addOption0" : ["Да", "Нет"],
+                       "addCostOption0" : [],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%B0%2F%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B0.png?alt=media&token=8f78e1f4-5fbf-4cd5-89a5-1a437bd2a89a"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(voronka)
+        
+        let aeropress = [ "group": "Альтернатива",
+                       "name": "AeroPress",
+                       "description": "Метод, при котором вода проходит через кофе под давлением руки",
+                       "cost": 130,
+                       "volume": 200,
+                       "addName" : ["С собой"],
+                       "addOption0" : ["Да", "Нет"],
+                       "addCostOption0" : [],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%B0%2F%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B0.png?alt=media&token=8f78e1f4-5fbf-4cd5-89a5-1a437bd2a89a"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(aeropress)
+
+    }
+    
+    static func addNoCoffeeProductToDatabase () {
+        
+        let tea = [ "group": "Не кофе",
+                       "name": "Чай",
+                       "description": "Альтернативный способ заваривания кофе с мягким и чистым вкусом",
+                       "cost": 170,
+                       "volume": 300,
+                       "addName" : ["Вид", "Лимон", "Погорячее"],
+                       "addOption0" : ["Черный", "Зеленый"],
+                       "addCostOption0" : [],
+                       "addOption1" : ["Нет", "Да"],
+                       "addCostOption1" : [0, 10],
+                       "addOption2" : ["Да", "Чуть-чуть разбавить"],
+                       "addCostOption2" : [],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%B0%2F%D0%9A%D0%B5%D0%BC%D0%B5%D0%BA%D1%81.png?alt=media&token=7cd7914c-81dd-401c-893a-1200c3bc3b57"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(tea)
+        
+        let сitrus = [ "group": "Не кофе",
+                       "name": "Цитрусовый чай с чабрецом",
+                       "description": "Метод заваривания фильтра с насыщенныи и всегда разным вкусом",
+                       "cost": 170,
+                       "volume": 300,
+                       "addName" : ["Погорячее"],
+                       "addOption0" : ["Да", "Чуть-чуть разбавить"],
+                       "addCostOption0" : [],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%B0%2F%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B0.png?alt=media&token=8f78e1f4-5fbf-4cd5-89a5-1a437bd2a89a"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(сitrus)
+        
+    }
+    
+    static func addSpicyProductToDatabase () {
+         
+         let ice = [ "group": "Авторские напитки",
+                        "name": "Прянный Латте",
+                        "description": "Напиток с имибирем, розовым прецем и медом, латте котороый точно согреет вас",
+                        "cost": 170,
+                        "volume": 400,
+                        "addName" : ["Молоко"],
+                        "addOption0" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"],
+                        "addCostOption0" : [0, 80, 80, 80, 40],
+                        "avalible": true,
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9B%D0%B5%D1%82%D0%BD%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%2F%D0%90%D0%B8%CC%86%D1%81%20%D0%9B%D0%B0%D1%82%D1%82%D0%B5.png?alt=media&token=1946ecc7-b839-490f-bd08-7a91c4347129"] as [String : Any]
+         
+         Service.sharedInstance.ref.child("Products").childByAutoId().setValue(ice)
+    }
+    
+    
+    static func addSyropToDatabase () {
+        
+        
+//                let americano = [ "group": "Классика",
+//                                   "name": "Американо",
+//                                   "description": "Классический черный кофе",
+//                                   "cost": 90,
+//                                   "volume": 150,
+//                                   "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+//                                   "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+//                                   "addCostOption0" : [],
+//                                   "addOption1" : ["Нет", "С корицей"],
+//                                   "addCostOption1" : [],
+//                                   "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+//                                   "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+//                                   "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+//                                   "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+//                                   "addOption3" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"],
+//                                   "addCostOption3" : [0, 10, 10, 10, 10],
+//                                   "avalible": true,
+//                                   "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA%D0%B0%2F%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D0%BE.png?alt=media&token=7b837c87-6270-4189-a64c-66f57519b916"] as [String : Any]
+
+//        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(americano)
+        
+        
+                let bigAmericano = [ "group": "Классика",
+                                     "name": "Большой американо",
+                                     "description": "Большой классический черный кофе",
+                                     "cost": 110,
+                                     "volume": 300,
+                                     "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+                                     "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+                                     "addCostOption0" : [],
+                                     "addOption1" : ["Нет", "С корицей"],
+                                     "addCostOption1" : [],
+                                     "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+                                     "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+                                     "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+                                     "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                                     "addOption3" : ["Нет", "Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко"],
+                                     "addCostOption3" : [0, 10, 10, 10, 10],
+                                     "avalible": true,
+                                     "imageUrl": ""] as [String : Any]
+        
+                Service.sharedInstance.ref.child("Products").childByAutoId().setValue(bigAmericano)
+        
+        let capuchino = [ "group": "Классика",
+                                       "name": "Капучно",
+                                       "description": "Кофе с хорошо вспененным молоком",
+                                       "cost": 110,
+                                       "volume": 180,
+                                       "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+                                       "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+                                       "addCostOption0" : [],
+                                       "addOption1" : ["Нет", "С корицей"],
+                                       "addCostOption1" : [],
+                                       "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+                                       "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+                                       "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+                                       "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                                       "addOption3" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсяное молоко"],
+                                       "addCostOption3" : [0, 50, 50, 50, 20],
+                                       "avalible": true,
+                                       "imageUrl": ""] as [String : Any]
+             
+                     Service.sharedInstance.ref.child("Products").childByAutoId().setValue(capuchino)
+             
+                     let bigCapuchino = [ "group": "Классика",
+                                          "name": "Большой капучино",
+                                          "description": "Любимый многими капучино в двойном объеме",
+                                          "cost": 140,
+                                          "volume": 350,
+                                          "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+                                          "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+                                          "addCostOption0" : [],
+                                          "addOption1" : ["Нет", "С корицей"],
+                                          "addCostOption1" : [],
+                                          "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+                                          "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+                                          "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+                                          "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                                          "addOption3" : ["Нет", "Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко"],
+                                          "addCostOption3" : [0, 80, 80, 80, 40],
+                                          "avalible": true,
+                                          "imageUrl": ""] as [String : Any]
+             
+                     Service.sharedInstance.ref.child("Products").childByAutoId().setValue(bigCapuchino)
+        
+        
+                let latte = [ "group": "Классика",
+                                  "name": "Латте",
+                                  "description": "Мягкий кофе с молоком и небольшой шапочкой из пены",
+                                  "cost": 120,
+                                  "volume": 230,
+                                  "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+                                  "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+                                  "addCostOption0" : [],
+                                  "addOption1" : ["Нет", "С корицей"],
+                                  "addCostOption1" : [],
+                                  "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+                                  "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+                                  "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+                                  "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                                  "addOption3" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсяное молоко"],
+                                  "addCostOption3" : [0, 50, 50, 50, 20],
+                                  "avalible": true,
+                                  "imageUrl": ""] as [String : Any]
+        
+                Service.sharedInstance.ref.child("Products").childByAutoId().setValue(latte)
+        
+                let bigLatte = [ "group": "Классика",
+                                     "name": "Большой латте",
+                                     "description": "Большой стакан любимого всеми напитка",
+                                     "cost": 150,
+                                     "volume": 450,
+                                     "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+                                     "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+                                     "addCostOption0" : [],
+                                     "addOption1" : ["Нет", "С корицей"],
+                                     "addCostOption1" : [],
+                                      "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+                                                                      "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+                                                                      "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+                                                                      "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                                                                      "addOption3" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсяное молоко"],
+                                                                      "addCostOption3" : [0, 80, 80, 80, 40],
+                                     "avalible": true,
+                                     "imageUrl": ""] as [String : Any]
+        
+                Service.sharedInstance.ref.child("Products").childByAutoId().setValue(bigLatte)
+        
+        
+                let flat = [ "group": "Классика",
+                                     "name": "Флэт Уйат",
+                                     "description": "Крепкий кофе с молоком неболшого объема",
+                                     "cost": 130,
+                                     "volume": 180,
+                                     "addName" : ["Сахар", "Корица", "Сироп", "Молоко"],
+                                     "addOption0" : ["Нет", "Половина ложки сахара", "Ложка сахара", "Две ложки сахара", "Три ложки сахара"],
+                                     "addCostOption0" : [],
+                                     "addOption1" : ["Нет", "С корицей"],
+                                     "addCostOption1" : [],
+                                     "addOption2" : ["Нет", "Шоколадный сироп", "Шоколадное печенье", "Миндальный сироп", "Мятный сироп", "Персиковый сироп",
+                                     "Сироп Амаретто", "Кокосовый сироп", "Фундучный сироп", "Карамельный сироп", "Белый шоколад",
+                                     "Банановый сироп", "Кленовый сироп", "Имбирый пряник"],
+                                     "addCostOption2" : [0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                                     "addOption3" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсяное молоко"],
+                                     "addCostOption3" : [0, 50, 50, 50, 20],
+                                     "avalible": true,
+                                     "imageUrl": ""] as [String : Any]
+        
+                Service.sharedInstance.ref.child("Products").childByAutoId().setValue(flat)
         
         
         
+       }
+    
+    static func addSummerProductToDatabase () {
+        
+        let ice = [ "group": "Летнее меню",
+                       "name": "Айс Латте",
+                       "description": "Классический латте, но холодный и со льдом, идально в жаркий день",
+                       "cost": 150,
+                       "volume": 400,
+                       "addName" : ["Молоко"],
+                       "addOption0" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"],
+                       "addCostOption0" : [0, 80, 80, 80, 40],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9B%D0%B5%D1%82%D0%BD%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%2F%D0%90%D0%B8%CC%86%D1%81%20%D0%9B%D0%B0%D1%82%D1%82%D0%B5.png?alt=media&token=1946ecc7-b839-490f-bd08-7a91c4347129"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(ice)
+        
+        
+        let strawberry = [ "group": "Летнее меню",
+                       "name": "Клубничный Фраппучино",
+                       "description": "Холодная версия клубничного рафа с шариком мороженного, сладкий и очень вкусный",
+                       "cost": 190,
+                       "volume": 400,
+                       "addName" : ["Молоко"],
+                       "addOption0" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"],
+                       "addCostOption0" : [0, 80, 80, 80, 40],
+                       "avalible": true,
+                       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9B%D0%B5%D1%82%D0%BD%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%2F%D0%9A%D0%BB%D1%83%D0%B1%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B8%CC%86%20%D0%A4%D1%80%D0%B0%D0%BF%D0%BF%D1%83%D1%87%D0%B8%D0%BD%D0%BE.png?alt=media&token=8b4efdeb-2b77-45be-9ed9-2f2d5132b48c"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(strawberry)
+        
+        
+        let coldbrew = [ "group": "Летнее меню",
+                              "name": "Cold Brew",
+                              "description": "Кофе холодного заваривания с ярким кофейным вкусом и высоким содержанием кофеина",
+                              "cost": 140,
+                              "volume": 200,
+                              "addName" : ["Со льдом"],
+                              "addOption0" : ["Да", "Нет"],
+                              "addCostOption0" : [],
+                              "avalible": true,
+                              "imageUrl": "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9B%D0%B5%D1%82%D0%BD%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%2F%D0%9A%D0%BE%D0%BB%D0%B4%20%D0%91%D1%80%D1%8E.png?alt=media&token=b0bc5846-b2e5-401c-b1b2-b26ead41337b"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(coldbrew)
+        
+        let coldbrewMilk = [ "group": "Летнее меню",
+                              "name": "Cold Brew c молоком",
+                              "description": "Кофе холодного заваривания с ярким кофейным вкусом и высоким содержанием кофеина",
+                              "cost": 160,
+                              "volume": 300,
+                              "addName" : ["Молоко"],
+                              "addOption0" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"],
+                              "addCostOption0" : [0, 20, 20, 20, 20],
+                              "avalible": true,
+                              "imageUrl":
+                                "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9B%D0%B5%D1%82%D0%BD%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%2F%D0%9A%D0%BE%D0%BB%D0%B4%20%D1%81%20%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE%D0%BC.png?alt=media&token=b7c96a94-99a5-4269-aaf7-943261685d38"] as [String : Any]
+        
+        Service.sharedInstance.ref.child("Products").childByAutoId().setValue(coldbrewMilk)
+        
+        let matcha = [ "group": "Летнее меню",
+                                  "name": "Айс Матча",
+                                  "description": "Холодный вариант японского зеленого чая с молоком",
+                                  "cost": 160,
+                                  "volume": 300,
+                                  "addName" : ["Молоко"],
+                                  "addOption0" : ["Классическое молоко", "Кокосовое молоко", "Миндальное молоко", "Соевое молоко", "Овсянное молоко"],
+                                  "addCostOption0" : [0, 80, 80, 80, 40],
+                                  "avalible": true,
+                                  "imageUrl":
+                                    "https://firebasestorage.googleapis.com/v0/b/wild-coffee-order.appspot.com/o/%D0%9B%D0%B5%D1%82%D0%BD%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%2F%D0%90%D0%B8%CC%86%D1%81%20%D0%9C%D0%B0%D1%82%D1%87%D0%B0.png?alt=media&token=1067285e-58e0-4741-b240-d53361db65c7"] as [String : Any]
+            
+            
+            Service.sharedInstance.ref.child("Products").childByAutoId().setValue(matcha)
     }
     
     static func addGroupToDatabase () {
